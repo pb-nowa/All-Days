@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shoe_id: 1
+  color: MyString
+  size: MyString
+
+two:
+  shoe_id: 1
+  color: MyString
+  size: MyString
