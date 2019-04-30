@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux-connect';
+// import { createStore } from 'redux-connect';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
