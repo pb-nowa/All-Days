@@ -4,8 +4,8 @@ class SignupForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            firstName: "",
-            lastName: "",
+            first_name: "",
+            last_name: "",
             email: "",
             password: ""
         };
@@ -14,16 +14,20 @@ class SignupForm extends React.Component {
     }
 
     update(field){
-        return e => this.setState({
+        return e => {
+            console.log(e.currentTarget.value);
+            return this.setState({
+            
             [field]: e.currentTarget.value
-        });
+            });
+        };
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const login = this.props.login;
+        const signup = this.props.signup;
         let user = this.state;
-        login(user);
+        signup(user);
     }
 
     render(){
@@ -37,13 +41,13 @@ class SignupForm extends React.Component {
                 </ul>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="firstName">FIRST NAME</label>
-                    <input id="firstName" type="text" onChange={this.update("firstName")}/>
+                    <input id="firstName" type="text" onChange={this.update("first_name")}/>
                     <label htmlFor="lastName">LAST NAME</label>
-                    <input id="lastName" type="text" onChange={this.update("lastName")}/>
+                    <input id="lastName" type="text" onChange={this.update("last_name")}/>
                     <label htmlFor="email-signup">EMAIL*</label>
                     <input id="email-signup" type="text" onChange={this.update("email")}/>
-                    <label htmlFor="password-signup" onChange={this.update("password")}>PASSWORD*</label>
-                    <input id="password-signup" type="password" />
+                    <label htmlFor="password-signup">PASSWORD*</label>
+                    <input id="password-signup" type="password" onChange={this.update("password")}/>
                     <button>REGISTER</button>
                 </form>
                 <h6>* REQUIRED FIELDS</h6>
