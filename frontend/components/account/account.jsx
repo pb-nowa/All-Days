@@ -3,7 +3,9 @@ import LoginForm from './login_form';
 import SignupForm from './signup_form';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
-const Account = ({ login, signup, ownProps, state, logout }) => (
+const Account = ({ login, signup, ownProps, state, logout }) => {
+  // debugger
+  return(
 
   <div>
     <LoginForm login={login} />
@@ -11,6 +13,6 @@ const Account = ({ login, signup, ownProps, state, logout }) => (
     <button onClick={logout}>Log Out</button>
   </div>
 
-)
+)}
 
 export default Account;

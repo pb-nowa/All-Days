@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
             email: "",
             password: ""
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
@@ -27,7 +28,7 @@ class LoginForm extends React.Component {
         return (
             <div>
                 <h2>LOGIN</h2>
-                <form onSubmit={this.handleLoginSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="email-login">EMAIL</label>
                     <input id="email-login" type="text" onChange={this.update("email")} />
                     <label htmlFor="password-login">PASSWORD</label>

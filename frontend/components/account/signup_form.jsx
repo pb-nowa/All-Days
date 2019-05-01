@@ -15,9 +15,7 @@ class SignupForm extends React.Component {
 
     update(field){
         return e => {
-            console.log(e.currentTarget.value);
-            return this.setState({
-            
+            return this.setState({            
             [field]: e.currentTarget.value
             });
         };
@@ -48,7 +46,7 @@ class SignupForm extends React.Component {
                     <input id="email-signup" type="text" onChange={this.update("email")}/>
                     <label htmlFor="password-signup">PASSWORD*</label>
                     <input id="password-signup" type="password" onChange={this.update("password")}/>
-                    <button>REGISTER</button>
+                    <button className="submit">REGISTER</button>
                 </form>
                 <h6>* REQUIRED FIELDS</h6>
             </div>
