@@ -2,11 +2,10 @@ import { login, signup, logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import Account from './account';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     console.log(state);
     return({
-        ownProps: ownProps,
-        state: state
+        currentUser: state.session.id,
     }); 
 };
 

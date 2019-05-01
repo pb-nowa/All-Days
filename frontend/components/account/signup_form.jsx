@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
     render(){
 
         return(
-            <div>
+            <div className="form" id="sign-up">
                 <h2>CREATE AN ACCOUNT</h2>
                 <ul>
                     <li>We never save credit card information.</li>
@@ -46,7 +46,7 @@ class SignupForm extends React.Component {
                     <input id="email-signup" type="text" onChange={this.update("email")}/>
                     <label htmlFor="password-signup">PASSWORD*</label>
                     <input id="password-signup" type="password" onChange={this.update("password")}/>
-                    <button className="submit">REGISTER</button>
+                    <input type="submit" className="submit" value="REGISTER"/>
                 </form>
                 <h6>* REQUIRED FIELDS</h6>
             </div>

@@ -1,0 +1,82 @@
+
+.forms-page {
+    display: flex;
+    position: fixed;
+    min-height: 2000px;
+    width: 100%;
+    background-color: #eee8e6;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 50px 30px 50px 30px;
+    
+}
+
+#login {
+    min-height: 500px;
+    max-width: 400px;
+}
+
+#sign-up {
+    min-height: 800px;
+    max-width: 400px;
+    margin: 50px 30px 50px 0px;
+}
+
+.form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 20px 30px 20px;
+}
+
+h6 {
+    font-size: 30px;
+}
+
+.form ul {
+    margin: 0px 10px 20px 10px;
+}
+.form ul li {
+    margin: 10px 10px 20px 10px;
+}
+
+form input {
+    box-sizing: border-box;
+    min-height: 40px;
+    min-width: 390px;
+    padding: 20px;
+    border: 1px solid rgb(230, 229, 229);
+    margin: 20px;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+form label {
+    margin: 20px;
+}
+
+.submit:hover { 
+    cursor: pointer;
+    background-color: #eee8e6;
+    color: black;
+}
+
+.submit {
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    font-size: 12px;
+    min-height: 40px;
+    min-width: 390px;
+    padding: 20px;
+    margin: 20px;
+    transition: 0.3s;
+    border: 2px solid black;
+}
