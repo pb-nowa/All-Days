@@ -1,17 +1,23 @@
-import { connect } from 'react-redux';
-import AccountForm from './account_form';
+import React from 'react';
 
-const MSTP = state => {
-    
-    return ({
+class AccountForm extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            email: "",
+            password: "",
+            firstName: "",
+            lastName: "",
+        };
+    }    
 
-    });
-};
 
-const MDTP = dispatch => {
-    return ({
 
-    });
-};
+    render(){
+        return(
+            <div>this is the form</div>
+        )
+    }
+}
 
-export default connect(MSTP, MDTP)(AccountForm);
+export default AccountForm;
