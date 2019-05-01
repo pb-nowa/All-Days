@@ -1,7 +1,8 @@
 
 .forms-page {
     display: flex;
-    position: fixed;
+    position: relative;
+    overflow: auto;
     min-height: 2000px;
     width: 100%;
     background-color: #eee8e6;
@@ -32,7 +33,7 @@
 
 .form h2 {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bolder;
     margin: 20px 20px 30px 20px;
 }
 
