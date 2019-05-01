@@ -7,9 +7,7 @@ class Home extends React.Component {
         return(
             <div> 
                 <h1>Alldays HOMEPAGE</h1>
-                <Link to={'/account'}>
-                    <h3>Account</h3>
-                </Link>
+
             </div>
         );
     }

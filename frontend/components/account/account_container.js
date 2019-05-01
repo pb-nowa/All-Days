@@ -1,6 +1,14 @@
 import { login, signup, logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
-import AccountForm from './account_form';
+import Account from './account';
+
+const mapStateToProps = (state, ownProps) => {
+    console.log(state);
+    return({
+        ownProps: ownProps,
+        state: state
+    }); 
+};
 
 const mapDispatchToProps = dispatch => {
     return ({
@@ -10,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     });
 };
 
-export default connect(null, mapDispatchToProps)(AccountForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Account);
