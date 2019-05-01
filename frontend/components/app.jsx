@@ -1,13 +1,15 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import AccountFormContrainer from './account_form/account_form_container';
+import AccountFormContainer from './account_form/account_form_container';
+import Home from '../components/home/home';
 
 const App = () => (
+
     <div>
-        This is app!
-        {/* <Switch>
+        <Switch> 
             <Route exact path="/account" component={AccountFormContainer}/>
-        </Switch> */}
+            <Route path="/" component={Home}/>
+        </Switch>
     </div>
 );
 

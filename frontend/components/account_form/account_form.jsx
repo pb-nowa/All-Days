@@ -1,23 +1,14 @@
 import React from 'react';
+import LoginForm from './login_form';
+import SignupForm from './signup_form';
 
-class AccountForm extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            email: "",
-            password: "",
-            firstName: "",
-            lastName: "",
-        };
-    }    
+const AccountForm = (props) => (
 
+  <div>
+    <LoginForm login={props.login} />
+    <SignupForm signup={props.signup} />
+  </div>
 
-
-    render(){
-        return(
-            <div>this is the form</div>
-        )
-    }
-}
+)
 
 export default AccountForm;
