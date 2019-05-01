@@ -2,8 +2,8 @@
   "name": "all_days",
   "private": true,
   "engines": {
-    "node": "6.10.1",
-    "npm": "3.10.10"
+    "node": "11.13.0",
+    "npm": "6.7.0"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Account from './account';
 
 const mapStateToProps = state => {
-    console.log(state);
     return({
         currentUser: state.session.id,
     }); 
