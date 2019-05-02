@@ -3,12 +3,12 @@ import LoginForm from './login_form';
 import SignupForm from './signup_form';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
-const Account = ({ login, signup, logout, currentUser }) => {
+const Account = ({ login, signup, logout, currentUser, errors }) => {
   
   const forms = () => (
     <div className="forms-page">
-      <LoginForm login={login} />
-      <SignupForm signup={signup} />
+      <LoginForm login={login} errors={errors}/>
+      <SignupForm signup={signup} errors={errors}/>
     </div>
   )
 

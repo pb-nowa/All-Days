@@ -92,3 +92,12 @@ form label {
     align-self: center;
     margin: 0 0 28px 35px;
 }
+
+.errors {
+    margin: 0
+}
+.error {
+    font-size: 14px;
+    margin: 5px;
+    color: red($color: #5d0d0d);
+}

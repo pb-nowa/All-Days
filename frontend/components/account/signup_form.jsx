@@ -9,8 +9,8 @@ class SignupForm extends React.Component {
             email: "",
             password: ""
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field){
@@ -28,8 +28,19 @@ class SignupForm extends React.Component {
         signup(user);
     }
 
-    render(){
+    renderErrors() {
+        return (
+            <ul className="errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={i} className="error">
+                        *{error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
+    render(){  
         return(
             <div className="form" id="sign-up">
                 <h2>CREATE AN ACCOUNT</h2>
@@ -37,6 +48,7 @@ class SignupForm extends React.Component {
                     <li>We never save credit card information.</li>
                     <li>Registering makes checkout fast and easy and saves your order information to your account</li>
                 </ul>
+                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="firstName">FIRST NAME</label>
                     <input id="firstName" type="text" onChange={this.update("first_name")}/>

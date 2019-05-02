@@ -5,6 +5,7 @@ import Account from './account';
 const mapStateToProps = state => {
     return({
         currentUser: state.session.id,
+        errors: state.errors.session,
     }); 
 };
 
