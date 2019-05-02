@@ -17,3 +17,46 @@ shoe_5 = Shoe.create!(style: "Runner", name: "Women's Wool Runners", material: "
 shoe_6 = Shoe.create!(style: "Topper", name: "Women's Tree Toppers", material: "Tree", gender: "womens", price: 115)
 shoe_7 = Shoe.create!(style: "Breezer", name: "Women's Tree Breezers", material: "Tree", gender: "womens", price: 95)
 shoe_8 = Shoe.create!(style: "Skipper", name: "Women's Tree Skippers", material: "Tree", gender: "womens", price: 95)
+
+item_1 = Item.create!(shoe_id: 1, color: "black", size: 8)
+item_2 = Item.create!(shoe_id: 1, color: "black", size: 9)
+item_3 = Item.create!(shoe_id: 1, color: "grey", size: 8)
+item_4 = Item.create!(shoe_id: 1, color: "grey", size: 9)
+
+item_5 = Item.create!(shoe_id: 2, color: "black", size: 8)
+item_6 = Item.create!(shoe_id: 2, color: "black", size: 9)
+item_7 = Item.create!(shoe_id: 2, color: "grey", size: 8)
+item_8 = Item.create!(shoe_id: 2, color: "grey", size: 9)
+
+item_9 = Item.create!(shoe_id: 3, color: "brown", size: 8)
+item_10 = Item.create!(shoe_id: 3, color: "brown", size: 9)
+item_11 = Item.create!(shoe_id: 3, color: "beige", size: 8)
+item_12 = Item.create!(shoe_id: 3, color: "beige", size: 9)
+
+item_13 = Item.create!(shoe_id: 4, color: "brown", size: 8)
+item_14 = Item.create!(shoe_id: 4, color: "brown", size: 9)
+item_15 = Item.create!(shoe_id: 4, color: "white", size: 8)
+item_16 = Item.create!(shoe_id: 4, color: "white", size: 9)
+
+
+item_17 = Item.create!(shoe_id: 5, color: "black", size: 8)
+item_18 = Item.create!(shoe_id: 5, color: "black", size: 9)
+item_19 = Item.create!(shoe_id: 5, color: "grey", size: 8)
+item_20 = Item.create!(shoe_id: 5, color: "grey", size: 9)
+
+item_21 = Item.create!(shoe_id: 6, color: "black", size: 8)
+item_22 = Item.create!(shoe_id: 6, color: "black", size: 9)
+item_23 = Item.create!(shoe_id: 6, color: "grey", size: 8)
+item_24 = Item.create!(shoe_id: 6, color: "grey", size: 9)
+
+item_25 = Item.create!(shoe_id: 7, color: "brown", size: 8)
+item_26 = Item.create!(shoe_id: 7, color: "brown", size: 9)
+item_27 = Item.create!(shoe_id: 7, color: "beige", size: 8)
+item_28 = Item.create!(shoe_id: 7, color: "beige", size: 9)
+
+item_29 = Item.create!(shoe_id: 8, color: "brown", size: 8)
+item_30 = Item.create!(shoe_id: 8, color: "brown", size: 9)
+item_31 = Item.create!(shoe_id: 8, color: "white", size: 8)
+item_32 = Item.create!(shoe_id: 8, color: "white", size: 9)
+
+

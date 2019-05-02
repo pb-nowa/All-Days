@@ -2,14 +2,14 @@ class Item < ApplicationRecord
     has_many :cart_items
     belongs_to :shoe
 
-    # def womens_shoes
-    #     query = <<-SQL 
-    #         SELECT color DISTINCT
-    #         FROM items
-    #         WHERE gender LIKE women
-
-    #     SQL
-    #     ActiveRecord::Base.connection.execute(query)
-    # end
+    def self.find_by_gender(search_id)
+        query = <<-SQL 
+            SELECT items.id, color, style, shoes.name, material, gender, price
+            FROM items
+            JOIN shoes on items.shoe_id = shoes.id
+            WHERE shoes.gender = \'#{search_id}\'
+        SQL
+        return ActiveRecord::Base.connection.execute(query).to_a
+    end
 
 end
