@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(field) {
@@ -23,10 +24,23 @@ class LoginForm extends React.Component {
         let user = this.state;
         login(user);
     }
+
+    demoLogin(e) {
+        e.preventDefault();
+        this.setState({
+            email: "demouser@demouser.com",
+            password: "demouser"
+        }, () => {
+            const login = this.props.login;
+            let user = this.state;
+            login(user);
+            }
+        );  
+    }
     
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors">
                 {this.props.errors.map((error, i) => (
                     <li key={i} className="error">
                         *{error}
@@ -49,6 +63,7 @@ class LoginForm extends React.Component {
                     <input id="password-login" type="password" onChange={this.update("password")} />
                     <input type="submit" className="submit" value="SIGN IN"/>
                 </form>
+                <input type="submit" onClick={this.demoLogin} className="submit" value="DEMO LOGIN"/>
             </div>
         );
     }
