@@ -48,7 +48,8 @@ class SignupForm extends React.Component {
                     <input id="password-signup" type="password" onChange={this.update("password")}/>
                     <input type="submit" className="submit" value="REGISTER"/>
                 </form>
-                <h6>* REQUIRED FIELDS</h6>
+                <p className="notice">This is a demo website, do not store personal information</p>
+                <p id="required-fields">* REQUIRED FIELDS</p>
             </div>
         );
     }

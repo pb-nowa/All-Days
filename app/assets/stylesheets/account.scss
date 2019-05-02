@@ -3,8 +3,10 @@
     display: flex;
     position: relative;
     overflow: auto;
-    min-height: 2000px;
+    min-height: 1000px;
     width: 100%;
+    min-width: 400px;
+    margin: 80px 0 0 0;
     background-color: #eee8e6;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -21,7 +23,7 @@
 }
 
 #login {
-    min-height: 500px;
+    min-height: 300px;
     max-width: 400px;
 }
 
@@ -37,10 +39,6 @@
     margin: 20px 20px 30px 20px;
 }
 
-h6 {
-    font-size: 30px;
-}
-
 .form ul {
     margin: 0px 10px 20px 10px;
 }
@@ -54,7 +52,7 @@ form input {
     min-width: 390px;
     padding: 20px;
     border: 1px solid rgb(230, 229, 229);
-    margin: 20px;
+    margin: 15px;
     font-size: 16px;
     border-radius: 2px;
 }
@@ -80,4 +78,17 @@ form label {
     margin: 20px;
     transition: 0.3s;
     border: 2px solid black;
+}
+
+#required-fields {
+    font-size: 14px;
+    font-weight: bold;
+    align-self: center;
+    margin: 0 0 28px 35px;
+}
+
+.notice {
+    font-size: 10px;
+    align-self: center;
+    margin: 0 0 28px 35px;
 }

@@ -6,16 +6,25 @@ import Home from '../components/home/home';
 const App = () => (
 
     <div>
-        <header>
-            <Link to="/" className="header-link"><h1>Alldays</h1></Link>
-            <nav>
-                <Link to={'/account'}><h3>Account</h3></Link>
-            </nav>      
+        <header className="header">
+            <div className="nav" id="left-nav">
+                <div className="nav-link"><h2>Men</h2></div>
+                <div className="nav-link"><h2>Women</h2></div>
+                <div className="nav-link"><h2>About</h2></div>
+            </div>
+            <div id="logo">
+                <Link to="/"><h1>Alldays</h1></Link>
+            </div>
+            <div className="nav" id="right-nav">
+                <div className="nav-link"><Link to={'/account'}><h2 id="account-link">Account</h2></Link></div>
+                <div className="nav-link"><h2>Cart</h2></div>
+            </div>      
         </header>
         <Switch> 
             <Route exact path="/account" component={AccountContainer}/>
             <Route path="/" component={Home}/>
         </Switch>
+        <footer></footer>
     </div>
 );
 

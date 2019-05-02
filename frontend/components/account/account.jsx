@@ -13,9 +13,9 @@ const Account = ({ login, signup, logout, currentUser }) => {
   )
 
   const myAccount = () => (
-    <div>
+    <div className="forms-page">
       <h2>My Account</h2>
-      <button onClick={logout}>Log Out</button>
+      <input type="submit" className="submit" value="SIGN OUT" onClick={logout}/>
     </div>
   )
 
