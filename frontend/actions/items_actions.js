@@ -9,12 +9,12 @@ const receiveShoeItems = items => {
     });
 };
 
-export const receiveMensShoeItems = () => (dispatch) => {
+export const mensShoes = () => (dispatch) => {
     ItemsApiUtil.receiveMensShoeItems()
     .then( items => dispatch(receiveShoeItems(items)));
 };
 
-export const receiveWomensShoeItems = () => (dispatch) => {
+export const womensShoes = () => (dispatch) => {
     ItemsApiUtil.receiveWomensShoeItems()
     .then ( items => dispatch(receiveWomensShoeItems(items)));
 };
