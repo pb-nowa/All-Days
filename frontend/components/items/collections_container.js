@@ -2,9 +2,9 @@ import { fetchItems } from '../../actions/items_actions';
 import { connect } from 'react-redux';
 import Collections from './collections';
 
-const mapStateToProps = ({ items }) => {
+const mapStateToProps = state => {
     return ({
-        items: items
+        items: state.entities.items
     });
 };
 

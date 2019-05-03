@@ -5,35 +5,26 @@ class Collections extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.items;
-        this.updateItems = this.updateItems.bind(this);
-    }
-
-    componentDidUpdate() {
-        if (this.props.match.params.id !== this.id) {
-            this.updateItems();
-        }
     }
     
     componentDidMount() {
         this.id = this.props.match.params.id;
-        this.updateItems();
+        this.props.fetchItems(this.id);
     }
 
-    updateItems() {
-        console.log("UPDATING ITEMS");
-
+    componentDidUpdate() {
         const id = this.props.match.params.id;
-        const items = this.props.fetchItems(id);
-        this.setState(items);
+        if (id !== this.id) {
+            this.id = id;
+            this.props.fetchItems(this.id);
+        }
     }
-
+    
     render() {
-        console.log("RENDER IS CALLED");
-
-        const item = () => {
-
-            const items = this.state.map(item => {
-                return (<Item item={item} key={item.id} />)
+        const populateItems = () => {
+            console.log("Populate items called");
+            const items = Object.values(this.props.items).map(item => {
+                return (<Item item={item} key={`${item.id}-${}`} />)
             });
 
             return (
@@ -46,9 +37,14 @@ class Collections extends React.Component {
                 </div>
             )
         }
-
-        console.log(this.state);
-        return this.state ? item() : (<div>ITEMS WERE NOT SET</div>);
+        
+        const items = this.props.items ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
+        
+        return(
+            <div>
+                {items}
+            </div>
+        )
     }
 }
 

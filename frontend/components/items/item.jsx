@@ -5,6 +5,10 @@ const Item = ({ item }) => {
         <div className="item">
             ITEM NAME:
            {item.name}
+           COLOR: 
+           {item.color}
+           PRICE:
+           {item.price}
         </div>
     )
 }
