@@ -3,8 +3,10 @@
     justify-content: space-between;
     align-items: space-around;
     position: fixed;
+    overflow: scroll;
     top: 0;
     width: 100%;
+    min-width: 800px;
     height: 80px;
     background-color: #f3f3f3;
     z-index: 1;
@@ -36,15 +38,15 @@ h2 {
     margin: 20px;
 }
 
-footer {
-    height: 200px;
-    width: 100%;
-    background-color: #1f3131
-}
-
 #logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px;
+}
+
+footer {
+    height: 200px;
+    width: 100%;
+    background-color: #1f3131
 }

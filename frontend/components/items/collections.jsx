@@ -1,26 +1,54 @@
 import React from 'react';
+import Item from './item';
 
 class Collections extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.items;
-        window.props = this.props;
+        this.updateItems = this.updateItems.bind(this);
     }
 
     componentDidUpdate() {
-        const gender = this.props.match.params.id;
-        this.props.fetchItems(gender);
+        if (this.props.match.params.id !== this.id) {
+            this.updateItems();
+        }
     }
     
     componentDidMount() {
-        const gender = this.props.match.params.id;
-        this.props.fetchItems(gender);
+        this.id = this.props.match.params.id;
+        this.updateItems();
+    }
+
+    updateItems() {
+        console.log("UPDATING ITEMS");
+
+        const id = this.props.match.params.id;
+        const items = this.props.fetchItems(id);
+        this.setState(items);
     }
 
     render() {
-        return (
-            <div>THIS IS ITEMS</div>
-        );
+        console.log("RENDER IS CALLED");
+
+        const item = () => {
+
+            const items = this.state.map(item => {
+                return (<Item item={item} key={item.id} />)
+            });
+
+            return (
+                <div>
+                    <h1>THIS IS ITEMS</h1>
+                    <ul>
+                        {items}
+                    </ul>
+
+                </div>
+            )
+        }
+
+        console.log(this.state);
+        return this.state ? item() : (<div>ITEMS WERE NOT SET</div>);
     }
 }
 

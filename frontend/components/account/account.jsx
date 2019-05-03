@@ -14,8 +14,19 @@ const Account = ({ login, signup, logout, currentUser, errors }) => {
 
   const myAccount = () => (
     <div className="forms-page">
-      <h2>My Account</h2>
-      <input type="submit" className="submit" value="SIGN OUT" onClick={logout}/>
+      <div className="my-account-page">
+        <div className="my-account-page-header">
+          <h1>My Account</h1>
+          <input type="submit" className="sign-out" value="LOGOUT" onClick={logout}/>
+        </div>
+        <div className="my-account-page-body">
+          <div className="order">You haven't placed any orders yet.</div>
+          <div className="user-info">
+            <div>WELCOME</div>
+            <div>{currentUser}</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 

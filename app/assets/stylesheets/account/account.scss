@@ -1,25 +1,36 @@
-
 .forms-page {
     display: flex;
     position: relative;
     overflow: auto;
     min-height: 1000px;
     width: 100%;
-    min-width: 400px;
+    min-width: 500px;
     margin: 80px 0 0 0;
     background-color: #eee8e6;
     align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;   
 }
-
 
 .form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 50px 30px 50px 30px;
+    margin: 100px 50px 50px 50px;
     
+    h2 {
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 20px 20px 30px 20px;
+    }
+
+    ul {
+        margin: 0px 10px 20px 10px;
+        
+        li {
+            margin: 10px 10px 20px 10px;
+        }
+    }
 }
 
 #login {
@@ -30,36 +41,25 @@
 #sign-up {
     min-height: 800px;
     max-width: 400px;
-    margin: 50px 30px 50px 0px;
 }
 
-.form h2 {
-    font-size: 24px;
-    font-weight: bolder;
-    margin: 20px 20px 30px 20px;
+form {
+    input {
+        box-sizing: border-box;
+        min-height: 40px;
+        min-width: 390px;
+        padding: 20px;
+        border: 1px solid rgb(230, 229, 229);
+        margin: 15px;
+        font-size: 16px;
+        border-radius: 2px;
+    }
+
+    label {
+        margin: 20px;
+    }
 }
 
-.form ul {
-    margin: 0px 10px 20px 10px;
-}
-.form ul li {
-    margin: 10px 10px 20px 10px;
-}
-
-form input {
-    box-sizing: border-box;
-    min-height: 40px;
-    min-width: 390px;
-    padding: 20px;
-    border: 1px solid rgb(230, 229, 229);
-    margin: 15px;
-    font-size: 16px;
-    border-radius: 2px;
-}
-
-form label {
-    margin: 20px;
-}
 
 .submit:hover { 
     cursor: pointer;
@@ -96,6 +96,7 @@ form label {
 .errors {
     margin: 0
 }
+
 .error {
     font-size: 14px;
     margin: 5px;
