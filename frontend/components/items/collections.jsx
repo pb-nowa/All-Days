@@ -41,17 +41,19 @@ class Collections extends React.Component {
                 <div className="items-header">
                     <h1>SHOES</h1>
                 </div>
-                <div className="filter-header">
-                    <div>Results</div>
-                    <ul className="filter-nav">
-                        <li>Size</li>
-                        <li>Hue</li>
-                        <li>Style</li>
-                        <li>Material</li>
-                    </ul>
-                </div>
+
                 <div className="items-body">
+                    <div className="filter-header">
+                        <div>All - {this.props.items.length} Results</div>
+                        <ul className="filter-nav">
+                            <li>Size</li>
+                            <li>Hue</li>
+                            <li>Style</li>
+                            <li>Material</li>
+                        </ul>
+                    </div>
                     {items}
+
                 </div>
             </div>
         )

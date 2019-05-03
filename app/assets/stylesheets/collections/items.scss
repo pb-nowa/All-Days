@@ -14,19 +14,21 @@
 }
 
 .items-body {
-    
+    display: flex;
+    flex-direction: column;
+    min-width: 455px;
+
     ul {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        min-width: 700px;
     }
 }
 
 .filter-header {
     height: 100px;
-    margin: 0 80px 0 80px;
+    margin: 0 40px 0 40px;
     border-bottom: 1px solid #dddd;
     display: flex;
     justify-content: space-between;
