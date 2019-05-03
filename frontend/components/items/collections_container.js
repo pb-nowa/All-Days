@@ -1,17 +1,16 @@
-import { mensShoes, womensShoes } from '../../actions/items_actions';
+import { fetchItems } from '../../actions/items_actions';
 import { connect } from 'react-redux';
 import Collections from './collections';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ items }) => {
     return ({
-        items: state.items
+        items: items
     });
 };
 
 const mapDispatchToProps = dispatch => {
     return ({
-        mensShoes: () => dispatch(mensShoes()),
-        womensShoes: () => dispatch(womensShoes()),
+        fetchItems: (id) => dispatch(fetchItems(id)),
     });
 };
 

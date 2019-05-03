@@ -1,13 +1,7 @@
-export const receiveMensShoeItems = () => (
+export const receiveShoeItems = (gender) => (
     $.ajax({
         method: 'GET',
-        url: '/api/items/mens'
+        url: `/api/items/${gender}`
     })
 );
 
-export const receiveWomensShoeItems = () => (
-    $.ajax({
-        method: 'GET',
-        url: '/api/items/womens'
-    })
-);

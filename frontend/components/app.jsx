@@ -11,8 +11,7 @@ const App = () => (
     <div>
         <Header />
         <Switch> 
-            <Route exact path="/collections/womens" component={CollectionsContainer}/>
-            <Route exact path="/collections/mens" component={CollectionsContainer}/>
+            <Route exact path="/collections/:id" component={CollectionsContainer}/>
             <Route exact path="/account" component={AccountContainer}/>
             <Route exact path="/" component={Home}/>
             <Route component={NoMatchingRoute}/>

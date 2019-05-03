@@ -1,20 +1,17 @@
-import * as ItemsApiUtil from "../util/items_api_util";
+import { receiveShoeItems } from "../util/items_api_util";
 
 export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
 
-const receiveShoeItems = items => {
+const fetchShoeItems = items => {
     return ({
-        action: RECEIVE_ITEMS,
+        type: RECEIVE_ITEMS,
         items: items
     });
 };
 
-export const mensShoes = () => (dispatch) => {
-    ItemsApiUtil.receiveMensShoeItems()
-    .then( items => dispatch(receiveShoeItems(items)));
+export const fetchItems = (id) => (dispatch) => {
+    receiveShoeItems(id)
+    .then( items => dispatch(fetchShoeItems(items)));
 };
 
-export const womensShoes = () => (dispatch) => {
-    ItemsApiUtil.receiveWomensShoeItems()
-    .then ( items => dispatch(receiveWomensShoeItems(items)));
-};
+
