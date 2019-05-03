@@ -24,17 +24,13 @@ class Collections extends React.Component {
         const populateItems = () => {
             console.log("Populate items called");
             const items = Object.values(this.props.items).map(item => {
-                return (<Item item={item} key={`${item.id}-${}`} />)
+                return (<Item item={item} key={`${item.id}`} />)
             });
 
             return (
-                <div>
-                    <h1>THIS IS ITEMS</h1>
-                    <ul>
-                        {items}
-                    </ul>
-
-                </div>
+                <ul>
+                    {items}
+                </ul>
             )
         }
         
@@ -42,7 +38,21 @@ class Collections extends React.Component {
         
         return(
             <div>
-                {items}
+                <div className="items-header">
+                    <h1>SHOES</h1>
+                </div>
+                <div className="filter-header">
+                    <div>Results</div>
+                    <ul className="filter-nav">
+                        <li>Size</li>
+                        <li>Hue</li>
+                        <li>Style</li>
+                        <li>Material</li>
+                    </ul>
+                </div>
+                <div className="items-body">
+                    {items}
+                </div>
             </div>
         )
     }
