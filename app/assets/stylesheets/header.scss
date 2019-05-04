@@ -1,13 +1,13 @@
 #header {
     display: flex;
-    justify-content: space-between;
-    align-items: space-around;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     position: fixed;
-    overflow: scroll;
     top: 0;
     width: 100%;
     min-width: 800px;
-    height: 80px;
+    // height: 80px;
     z-index: 1;
     transition: all ease-out .2s;
 }
@@ -21,6 +21,49 @@
     background-color:#fafafa;
     box-shadow: 0 0 10px 0 rgba(109, 109, 109, 0.3);
 
+}
+
+#navs {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-around;
+    overflow: scroll;
+    width: 100%;
+}
+
+#nav-dropdown {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 950px;
+    height: 510px;
+    padding: 60px 100px 60px 100px;
+    background-color: #dddd;
+}
+
+#nav-dropdown > div > ul {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #aaaa;
+    padding: 40px 0 40px 0;
+    
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .dropdown-shoe-image {
+            box-sizing: border-box;
+            height: 150px;
+            width: 150px;
+            background-color: #ffffff;
+
+        }
+
+        h3 {
+            color: rgba(117, 117, 117, 0.667);
+            font-size: 18px;
+        }
+    }
 }
 
 h2 {
