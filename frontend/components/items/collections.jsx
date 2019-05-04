@@ -1,10 +1,21 @@
 import React from 'react';
 import Item from './item';
+import Filter from './filter';
 
 class Collections extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.items;
+        this.state = {
+            items: this.props.items,
+            openFilter: false,
+            filters: {
+                size: { selected: false },
+                color: { selected: false },
+                style: { selected: false },
+                material: { selected: false },
+            }
+        };
+        this.toggleSelected = this.toggleSelected.bind(this);
     }
     
     componentDidMount() {
@@ -19,10 +30,35 @@ class Collections extends React.Component {
             this.props.fetchItems(this.id);
         }
     }
+
+    toggleSelected(id) {
+     
+        if (this.state.filters[id].selected){
+            this.setState({
+                filters: {
+                size: { selected: false },
+                color: { selected: false },
+                style: { selected: false },
+                material: { selected: false },
+            }});
+            this.setState({
+                openFilter: false
+            });
+        } else {
+            let newState = this.state.filters;
+            newState[id]["selected"] = true;
+            this.setState({
+                filters: newState
+            });
+            this.setState({
+                openFilter: true
+            });
+        }
+        console.log(this.state);
+    }
     
     render() {
         const populateItems = () => {
-            console.log("Populate items called");
             const items = Object.values(this.props.items).map(item => {
                 return (<Item item={item} key={`${item.id}`} />)
             });
@@ -44,12 +80,12 @@ class Collections extends React.Component {
 
                 <div className="items-body">
                     <div className="filter-header">
-                        <div>All - {this.props.items.length} Results</div>
+                        <div>All - {`${items.length}`} Results</div>
                         <ul className="filter-nav">
-                            <li>Size</li>
-                            <li>Hue</li>
-                            <li>Style</li>
-                            <li>Material</li>
+                            <Filter toggleItem={this.toggleSelected} key="size" id="size" name="Size" options={[8,9,10,11,12]}/>
+                            <Filter toggleItem={this.toggleSelected} key="color" id="color" name="Color" options={["Grey", "Blue", "Brown", "Black"]}/>
+                            <Filter toggleItem={this.toggleSelected} key="style" id="style" name="Style" options={["Runner", "Topper", "Lounger"]}/>
+                            <Filter toggleItem={this.toggleSelected} key="material" id="material" name="Material" options={["Tree", "Wool"]}/>
                         </ul>
                     </div>
                     {items}

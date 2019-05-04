@@ -28,7 +28,7 @@
 
 .filter-header {
     height: 100px;
-    margin: 0 40px 0 40px;
+    margin: 0 80px 0 80px;
     border-bottom: 1px solid #dddd;
     display: flex;
     justify-content: space-between;
@@ -36,12 +36,16 @@
     
     .filter-nav {
         display: flex;
-        
-        li {
-            margin: 15px;    
-        }
     }
 }
+
+    .filter-nav-item {
+        margin: 15px 0 15px 30px;    
+    }
+
+    .filter-nav-item:hover {
+        cursor: pointer;
+    }
 
 .item {
     margin: 40px 20px 40px 20px;
