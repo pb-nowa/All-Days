@@ -31,23 +31,34 @@ class ShoesDropdown extends React.Component {
                         <h3>this.state.shoe</h3>
                     </li>
                 </ul>
-                <div>
-                    <h2>Shop All {this.state.gender}</h2>
+                <div id="dropdown-attributes-container">
                     <div>
-                        <ul>
-                            <li>
-                                <h3>BY STYLE</h3>
-                                <ul>
-                                    <Link to={`/collections/${this.state.gender}`}>Runners</Link>
-                                    <Link to={`/collections/${this.state.gender}`}>Toppers</Link>
-                                    <Link to={`/collections/${this.state.gender}`}>Loungers</Link>
-                                    <Link to={`/collections/${this.state.gender}`}>Skippers</Link>
-                                </ul>
-                            </li>
-                            <li>BY COLOR</li>
-                        </ul>
+                        <h2>Shop All {this.state.gender}</h2>
+                        <div className="arrow">{">"}</div>
                     </div>
+                    <ul>
+                        <li>
+                            <h3>BY STYLE</h3>
+                            <ol>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Runners</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Toppers</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Loungers</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Skippers</Link>
+                            </ol>
+                        </li>
+                        <li>
+                            <h3>BY COLOR</h3>
+                            <ol>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Runners</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Toppers</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Loungers</Link>
+                                <Link className="attribute-link" to={`/collections/${this.state.gender}`}>Skippers</Link>
+                            </ol>
+                        </li>
+                    </ul>
+
                 </div>
+                <div className="arrow"><h4>^</h4></div>
             </div>
         )
     }

@@ -23,7 +23,7 @@ class Header extends React.Component {
         });
     }
 
-render() {
+    render() {
             return (
             <div className={this.state.scrollPosition ? "active-header" : "header"} id="header">
                 <div id="navs">
@@ -42,7 +42,6 @@ render() {
                         <div className="nav-link"><h2>CART</h2></div>
                     </div>
                 </div>
-
                 <div id="nav-dropdown">
                     <ShoesDropdown gender={'Men'} />
                 </div>

@@ -66,6 +66,48 @@
     }
 }
 
+#dropdown-attributes-container {
+    display: flex;
+
+    div {
+        display: flex;
+        padding: 15px;
+    }
+
+    div > #arrow {
+        margin: 0 10px 0 10px;
+        font-size: 30px;
+    }
+    
+    ul {
+        display: flex;
+        padding: 15px;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px 0 15px;
+
+            h3 {
+                color:rgba(117, 117, 117, 0.667);
+                margin-bottom: 10px;
+            }
+
+            ol {
+                display: flex;
+                flex-direction: column;
+
+                .attribute-link {
+                    margin: 10px 0 10px 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+}
+
 h2 {
     font-size: 20px;
 }
