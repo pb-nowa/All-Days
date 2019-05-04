@@ -23,9 +23,9 @@ class Collections extends React.Component {
         this.props.fetchItems(this.id);
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         const id = this.props.match.params.id;
-        if (id !== this.id) {
+        if (this.props.location !== prevProps.location) {
             this.id = id;
             this.props.fetchItems(this.id);
         }
@@ -74,7 +74,7 @@ class Collections extends React.Component {
         
         return(
             <div>
-                <div className="items-header">
+                <div className="img-header">
                     <h1>SHOES</h1>
                 </div>
 

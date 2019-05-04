@@ -4,12 +4,28 @@ import { Link, Route } from 'react-router-dom';
 class Header extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            scrollPosition: window.pageYOffset
+        };
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount(){
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll() {
+        this.setState((state) => {
+            return({
+                scrollPosition: window.pageYOffset,
+            });
+        });
     }
 
 render() {
-        return (
-            <div className="header">
-                <div className="nav" id="left-nav">
+            return (
+            <div className={this.state.scrollPosition ? "active-header" : "header"} id="header">
+                <div  className="nav" id="left-nav">
                     <div className="nav-link"><Link to={'/collections/mens'}><h2>MEN</h2></Link></div>
                     <div className="nav-link"><Link to={'/collections/womens'}><h2>WOMEN</h2></Link></div>
                     <div className="nav-link"><h2>ABOUT</h2></div>

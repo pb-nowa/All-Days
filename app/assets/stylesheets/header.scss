@@ -1,4 +1,4 @@
-.header {
+#header {
     display: flex;
     justify-content: space-between;
     align-items: space-around;
@@ -8,10 +8,19 @@
     width: 100%;
     min-width: 800px;
     height: 80px;
-    background-color: #f3f3f3;
     z-index: 1;
+    transition: all ease-out .2s;
+}
+
+.header {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.active-header {
+    background-color:#fafafa;
     box-shadow: 0 0 10px 0 rgba(109, 109, 109, 0.3);
-    transition: all ease-out .5s;
+
 }
 
 h2 {
@@ -48,5 +57,7 @@ h2 {
 footer {
     height: 200px;
     width: 100%;
-    background-color: #1f3131
+    background-color: #1f3131;
 }
+
+
