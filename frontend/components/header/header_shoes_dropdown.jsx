@@ -58,7 +58,7 @@ class ShoesDropdown extends React.Component {
                     </ul>
 
                 </div>
-                <div className="arrow"><h4>^</h4></div>
+                <div className="arrow"><h2>^</h2></div>
             </div>
         )
     }

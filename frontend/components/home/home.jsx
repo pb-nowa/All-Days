@@ -12,12 +12,12 @@ class Home extends React.Component {
                     <div id="home-links">
                         <div className="link-item-container">
                             <div className="home-link" id="mens-button">
-                                <Link className="link-box" to={'/collections/mens'}><h2>SHOP MEN</h2></Link>
+                                <Link className="link-box" to={'/collections/mens'}>SHOP MEN</Link>
                             </div>
                         </div>
                         <div className="link-item-container">
-                            <div className="home-link" id="womens-button">
-                                <Link className="link-box" to={'/collections/womens'}><h2>SHOP WOMEN</h2></Link>
+                            <div className="home-link" id="womens-button"> 
+                                <Link className="link-box" to={'/collections/womens'}>SHOP WOMEN</Link>
                             </div>
                         </div>
                     </div>

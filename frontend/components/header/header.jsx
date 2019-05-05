@@ -6,9 +6,11 @@ class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            scrollPosition: window.pageYOffset
+            scrollPosition: window.pageYOffset,
+            dropDown: false,
         };
         this.handleScroll = this.handleScroll.bind(this);
+        this.handleDropDown = this.handleDropDown.bind(this);
     }
 
     componentDidMount(){
@@ -23,13 +25,20 @@ class Header extends React.Component {
         });
     }
 
+    handleDropDown(){
+        this.setState(state => ({
+            dropDown: !state.dropDown
+        }));
+    }
+
     render() {
             return (
+            <>
             <div className={this.state.scrollPosition ? "active-header" : "header"} id="header">
                 <div id="navs">
                     <div  className="nav" id="left-nav">
                         <div className="nav-link">
-                            <h2>MEN</h2>
+                            <h2 onClick={this.handleDropDown}>MEN</h2>
                         </div>
                         <div className="nav-link"><Link to={'/collections/womens'}><h2>WOMEN</h2></Link></div>
                         <div className="nav-link"><h2>ABOUT</h2></div>
@@ -42,10 +51,11 @@ class Header extends React.Component {
                         <div className="nav-link"><h2>CART</h2></div>
                     </div>
                 </div>
-                <div id="nav-dropdown">
-                    <ShoesDropdown gender={'Men'} />
-                </div>
             </div>
+            <div id="nav-dropdown" className={this.state.dropDown ? "visible" : "invisible"}>
+                <ShoesDropdown gender={'Men'} />
+            </div>
+            </>
         )
     }
 
