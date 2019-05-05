@@ -44,28 +44,26 @@
 //     overflow: hidden;
 // }
 
-.invisible {
-    transform: translateY(0);
+.visible {
+    transform: translateY(80px);
     transition: transform .3s ease-in;
 }
 
-.visible {
-    transform: translateY(880px);
+.invisible {
+    transform: translateY(-880px);
     transition: transform .3s ease-in;
 }
 
 
 #nav-dropdown {
-    // transform: translateY(-800px);
-    // 
-    position: absolute;
-    top: -800px;
+    position: fixed;
     box-sizing: border-box;
     height: 510px;
     width: 100%;
     min-width: 950px;
     padding: 40px 100px 40px 100px;
-    background-color: #dddd;
+    background-color: rgb(238, 238, 238);
+    opacity: 1;
 }
 
 #nav-dropdown > div > ul {

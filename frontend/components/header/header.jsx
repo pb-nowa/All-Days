@@ -7,10 +7,13 @@ class Header extends React.Component {
         super(props);
         this.state = {
             scrollPosition: window.pageYOffset,
+            isHovered: false,
             dropDown: false,
         };
         this.handleScroll = this.handleScroll.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.enterHeaderHover = this.enterHeaderHover.bind(this);
+        this.leaveHeaderHover = this.leaveHeaderHover.bind(this);
     }
 
     componentDidMount(){
@@ -25,16 +28,32 @@ class Header extends React.Component {
         });
     }
 
+    enterHeaderHover(){
+        this.setState( state => ({
+            isHovered: true,
+        }));
+    }
+
+    leaveHeaderHover(){
+        this.setState( state => ({
+            isHovered: false,
+        }));
+    }
+
     handleDropDown(){
         this.setState(state => ({
             dropDown: !state.dropDown
         }));
     }
+    // return state.dropDown ? { isHovered: true, dropDown: true } : { dropDown: false };
 
     render() {
             return (
             <>
-            <div className={this.state.scrollPosition ? "active-header" : "header"} id="header">
+            <div onMouseEnter={this.enterHeaderHover} 
+                onMouseLeave={this.leaveHeaderHover}
+                className={this.state.scrollPosition || this.state.isHovered ? "active-header" : "header"} 
+                id="header">
                 <div id="navs">
                     <div  className="nav" id="left-nav">
                         <div className="nav-link">
