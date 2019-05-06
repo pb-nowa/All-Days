@@ -7,13 +7,10 @@ class Filter extends React.Component {
 
     render () {
         const options = this.props.options.map( option => (
-            <li id={option} key={option}>{option}</li>
+            <li onClick={() => this.props.addFilter(this.props.id, option)}id={option} key={option}>{option}</li>
         ));
         return (
-            <div className="filter-nav-item" 
-            onClick={ () => (
-                this.props.toggleItem(this.props.id)
-                )}>
+            <div className="filter-nav-item">
                 <h3>{this.props.name}</h3>
                 <ul>{options}</ul>
             </div>
