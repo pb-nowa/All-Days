@@ -9,28 +9,34 @@ class Collections extends React.Component {
         this.state = {
             openFilter: false,
             filters: {},
-            items: []
+            items: [],
+            filterAttributes: {
+                filterName: "",
+                filterId: "",
+                filterOptions: [],
+            }
         };
 
         this.filterItems = this.filterItems.bind(this);
         this.addFilter = this.addFilter.bind(this);
         this.clearFilters = this.clearFilters.bind(this);
         this.handleDropdown = this.handleDropdown.bind(this);
+        this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
     }
     
     componentDidMount() {
         const id = this.props.match.params.id;
-        this.props.fetchItems(id); 
-        //how do i get the state to reflect the initial props, react is warning me not to user props to define state?
-        this.setState( (state, { items }) => ({
-            items: items,
-        }));
+        
+        this.props.fetchItems(id).then((data) =>{
+        this.setState({
+            items: Object.values(data.items),
+        });
+
+        });
         
     }
 
-    componentDidUpdate(prevProps) {
-        //how do i update items with ajax request if component isnt nmounted agoin when location changes
-        
+    componentDidUpdate(prevProps) {        
         const id = this.props.match.params.id;
         if (this.props.location.hash !== prevProps.location.hash) {
             this.props.fetchItems(id);
@@ -71,12 +77,25 @@ class Collections extends React.Component {
             openFilter: !state.openFilter
         }));
     }
+
+    handleFilterAttrs(name, id, ...options){
+        this.setState(() => {
+            const newFilterAttrs = {
+                filterName: name,
+                filterId: id,
+                filterOptions: options
+            };
+            return({ filterAttributes: newFilterAttrs });
+        });
+    }
     
     render() {
-        console.log(this.state.items);
-        console.log(this.state.filters);
+
+        const filterAttrs = this.state.filterAttributes;
+        const { filterName, filterId, filterOptions } = filterAttrs;
+
         const populateItems = () => {
-            const items = this.props.items.map(item => {
+            const items = this.state.items.map(item => {
             return (
                 <Item item={item} key={`${item.id}`} />)
             });
@@ -102,22 +121,19 @@ class Collections extends React.Component {
                         <div>All - {`${this.state.items.length}`} Results</div>
                         <div className="filter-nav">
                             <div onClick={this.clearFilters} 
-                                className={ !!Object.keys(this.state.filters).length ? "clear-filters" : "clear-filters-invisible"}
+                                className={ !!(Object.keys(this.state.filters).length) ? "clear-filters" : "clear-filters-invisible"}
                                 >CLEAR FILTERS
                             </div>
-                            <ul onClick={this.handleDropdown}>
-                                <li>Size</li>
-                                <li>Color</li>
-                                <li>Style</li>
-                                <li>Material</li>
+                            <ul onClick={this.handleDropdown} >
+                                <li onClick={() => this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>Size</li>
+                                <li onClick={() => this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>Color</li>
+                                <li onClick={() => this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>Style</li>
+                                <li onClick={() => this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>Material</li>
                             </ul>
                         </div>
                     </div>
                     <div className={(this.state.openFilter ? "open-filter-dropdown" : "close-filter-dropdown") + " filter-dropdown"}>
-                        <Filter key="size" id="size" name="Size" options={[8,9,10,11,12]} addFilter={this.addFilter}/>
-                        <Filter key="color" id="color" name="Color" options={["Grey", "Blue", "Brown", "Black"]} addFilter={this.addFilter}/>
-                        <Filter key="style" id="style" name="Style" options={["Runner", "Topper", "Lounger"]} addFilter={this.addFilter}/>
-                        <Filter key="material" id="material" name="Material" options={["Tree", "Wool"]} addFilter={this.addFilter}/>
+                        <Filter name={filterName} id={filterId} options={filterOptions} addFilter={this.addFilter}/>
                     </div>
                     {items}
 

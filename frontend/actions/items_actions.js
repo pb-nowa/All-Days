@@ -9,9 +9,9 @@ const fetchShoeItems = items => {
     });
 };
 
-export const fetchItems = (id) => (dispatch) => {
+export const fetchItems = (id) => (dispatch) => (
     receiveShoeItems(id)
-    .then( items => dispatch(fetchShoeItems(items)));
-};
+    .then( items => dispatch(fetchShoeItems(items)))
+);
 
 
