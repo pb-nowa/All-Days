@@ -19,6 +19,25 @@ class Item extends React.Component {
 
     render(){
         const { item } = this.props;
+
+        const SelectOrAdd = (props) => {
+            if (!props.dropDown){
+                return (
+                    <>
+                    <div>Select Size</div>
+                    <div className="plus">+</div>
+                    </>
+                );
+            } else {
+                return (
+                    <>
+                    <div>Add Size to Cart</div>
+                    <div className="plus">-</div>
+                    </>
+                );
+            }
+        };
+
         return (
             <div className="item">
                 <div className="item-photo">MISSING PHOTO</div>
@@ -28,8 +47,7 @@ class Item extends React.Component {
                 </div>
                 <div className="item-info">{item.color}</div>
                 <div className="select-size" onClick={this.handleSizeDropdown}>
-                    <div>Select Size</div>
-                    <div className="plus">+</div>
+                    <SelectOrAdd dropDown={this.state.dropDown}/>  
                 </div>
                 <div className={"size-selections " + (this.state.dropDown ? "unhidden-size-selection" : "hidden-size-selection")}>
                     <ol className="size-selections-container">
