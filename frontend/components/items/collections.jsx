@@ -22,9 +22,10 @@ class Collections extends React.Component {
         const id = this.props.match.params.id;
         this.props.fetchItems(id); 
         //how do i get the state to reflect the initial props, react is warning me not to user props to define state?
-        this.setState( (state, props) => ({
-            items: Object.values(props.items),
+        this.setState( (state, { items }) => ({
+            items: items,
         }));
+        
     }
 
     componentDidUpdate(prevProps) {
@@ -39,7 +40,7 @@ class Collections extends React.Component {
     filterItems(){
         this.setState((state, props) => {
             const filters = this.state.filters;
-            const items = Object.values(this.props.items);
+            const items = this.props.items;
             const filteredItems = items.filter(item => {
                 return Object.keys(filters).every(key => filters[key] === item[key]);
             });
@@ -72,13 +73,14 @@ class Collections extends React.Component {
     }
     
     render() {
-        console.log("filters: ", this.state.filters);
-        console.log("items: ",this.state.items);
-
+        console.log(this.state);
+        console.log(this.props);
         const populateItems = () => {
-            const items = Object.values(this.props.items).map(item => {
-                return (<Item item={item} key={`${item.id}`} />)
+            const items = this.props.items.map(item => {
+            return (
+                <Item item={item} key={`${item.id}`} />)
             });
+            
 
             return (
                 <ul>
@@ -87,7 +89,7 @@ class Collections extends React.Component {
             )
         }
         
-        const items = this.props.items ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
+        const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
         
         return(
             <div>

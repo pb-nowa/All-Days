@@ -4,11 +4,10 @@ import Collections from './collections';
 import { selectItemsByGender } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-    // set some variable grabbing gender from location
     const gender = ownProps.match.params.id;
+    const items = selectItemsByGender(state, gender);
     return ({
-        // items: state.entities.items
-        items: selectItemsByGender(state.entities, gender)
+        items: items
     });
 };
 
