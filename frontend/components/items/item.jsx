@@ -31,7 +31,7 @@ class Item extends React.Component {
                     <div>Select Size</div>
                     <div className="plus">+</div>
                 </div>
-                <div className={ (this.state.dropDown ? "unhidden-size-selection" : "hidden-size-selection") + " size-selections"}>
+                <div className={"size-selections " + (this.state.dropDown ? "unhidden-size-selection" : "hidden-size-selection")}>
                     <ol className="size-selections-container">
                         <li className="size"><h4>8</h4></li>
                         <li className="size"><h4>9</h4></li>

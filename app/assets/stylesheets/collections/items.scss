@@ -110,41 +110,54 @@
         padding: 10px;
         border: 1px solid rgba(100, 100, 100, 0.867);
         background-color: white;
+        &:hover {
+            cursor: pointer;
+        }
     }
+}
 
-    .size-selections {
-        display: inline-block;
-        width: 350px;
-        overflow: hidden;
+.size-selections {
 
-        .size-selections-container {
+    display: inline-block;
+    width: 350px;
+    overflow: hidden;
+
+    .size-selections-container {
+        display: flex;
+        justify-content: space-between;
+
+        .size {
             display: flex;
-            justify-content: space-between;
-            .size {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            align-items: center;
+            justify-content: center;
 
-                h4 {
-                    box-sizing: border-box;
-                    padding: 20px;
-                    width: 50px;
-                    height: 50px;
-                    font-size: 14px;
-                    text-align: center;
-                    margin-top: 13px;
-                    border-radius: 2px;
-                    border: 1px solid black;
-                }              
+            h4 {
+                box-sizing: border-box;
+                padding: 18px;
+                width: 50px;
+                height: 50px;
+                font-size: 13px;
+                text-align: center;
+                margin-top: 13px;
+                border-radius: 2px;
+                border: 1px solid black;
+                transition: .2s;
+                &:hover {
+                    background-color: rgb(224, 224, 224);
+                    cursor: pointer;
+                }
+            }              
 
-            }
         }
     }
 
-    .hidden-size-selections {
-       max-height: 0px; 
-    }
-    .unhidden-size-selections {
-        max-height: 90px;
-    }
 }
+
+    .size-selections.hidden-size-selection {
+        height: 0px; 
+        transition: .2s;
+    }
+    .size-selections.unhidden-size-selection {
+        height: 90px;
+        transition: .2s;
+    }
