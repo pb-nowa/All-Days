@@ -3,17 +3,19 @@ import React from 'react';
 class Filter extends React.Component {
     constructor(props){
         super(props);
-        this.state = props;
     }
-    render () {
 
+    render () {
+        const options = this.props.options.map( option => (
+            <li id={option} key={option}>{option}</li>
+        ));
         return (
             <div className="filter-nav-item" 
             onClick={ () => (
-                this.state.toggleItem(this.state.id)
+                this.props.toggleItem(this.props.id)
                 )}>
-                <h3>{this.state.name}</h3>
-                <div></div>
+                <h3>{this.props.name}</h3>
+                <ul>{options}</ul>
             </div>
         )
     }

@@ -7,24 +7,24 @@ class Collections extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            items: this.props.items,
             openFilter: false,
-            filters: {
-                size: { selected: false },
-                color: { selected: false },
-                style: { selected: false },
-                material: { selected: false },
-            }
+            filters: {},
         };
-        this.toggleSelected = this.toggleSelected.bind(this);
+
+        this.filterItems = this.filterItems.bind(this);
     }
     
     componentDidMount() {
         this.id = this.props.match.params.id;
-        this.props.fetchItems(this.id);
+        this.props.fetchItems(this.id); 
+        //how do i get the state to reflect the initial props, react is warning me not to user props to define state?
+        this.setState( (state, props) => ({
+            items: props.items,
+        }));
     }
 
     componentDidUpdate(prevProps) {
+        //how do i update items with ajax request if component isnt nmounted agoin when location changes
         const id = this.props.match.params.id;
         if (this.props.location !== prevProps.location) {
             this.id = id;
@@ -32,29 +32,17 @@ class Collections extends React.Component {
         }
     }
 
-    toggleSelected(id) {
-     
-        if (this.state.filters[id].selected){
-            this.setState({
-                filters: {
-                size: { selected: false },
-                color: { selected: false },
-                style: { selected: false },
-                material: { selected: false },
-            }});
-            this.setState({
-                openFilter: false
+    filterItems(){
+        this.setState((state) => {
+            const filters = state.filters;
+            const items = state.items || {};
+            const filteredItems = items.filter(item => {
+                return Object.keys(filters).every(key => filters[key] === item[key]);
             });
-        } else {
-            let newState = this.state.filters;
-            newState[id]["selected"] = true;
-            this.setState({
-                filters: newState
+            return ({
+                items: filteredItems
             });
-            this.setState({
-                openFilter: true
-            });
-        }
+        });
     }
     
     render() {

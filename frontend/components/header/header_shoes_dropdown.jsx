@@ -5,7 +5,6 @@ class ShoesDropdown extends React.Component {
     constructor(props){
         super(props);
         this.defineGender = (gender) => {
-            console.log(gender);
             return  gender == "Men" ? "mens" : "womens";
         };
         this.state = {
