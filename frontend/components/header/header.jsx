@@ -9,6 +9,7 @@ class Header extends React.Component {
             scrollPosition: window.pageYOffset,
             isHovered: false,
             dropDown: false,
+            dropDownGender: "Men",
         };
         this.handleScroll = this.handleScroll.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
@@ -40,26 +41,28 @@ class Header extends React.Component {
         }));
     }
 
-    handleDropDown(){
+    handleDropDown(dropDownGender){
         this.setState(state => ({
-            dropDown: !state.dropDown
+            dropDown: !state.dropDown,
+            dropDownGender: dropDownGender
         }));
     }
-    // return state.dropDown ? { isHovered: true, dropDown: true } : { dropDown: false };
 
     render() {
             return (
             <>
             <div onMouseEnter={this.enterHeaderHover} 
                 onMouseLeave={this.leaveHeaderHover}
-                className={this.state.scrollPosition || this.state.isHovered ? "active-header" : "header"} 
+                className={this.state.scrollPosition || this.state.isHovered || this.state.dropDown ? "active-header" : "header"} 
                 id="header">
                 <div id="navs">
                     <div  className="nav" id="left-nav">
                         <div className="nav-link">
-                            <h2 onClick={this.handleDropDown}>MEN</h2>
+                            <h2 onClick={() => this.handleDropDown("Men")}>MEN</h2>
                         </div>
-                        <div className="nav-link"><Link to={'/collections/womens'}><h2>WOMEN</h2></Link></div>
+                        <div className="nav-link">
+                            <h2 onClick={() => this.handleDropDown("Women")}>WOMEN</h2>
+                        </div>
                         <div className="nav-link"><h2>ABOUT</h2></div>
                     </div>
                     <div id="logo">
@@ -72,7 +75,7 @@ class Header extends React.Component {
                 </div>
             </div>
             <div id="nav-dropdown" className={this.state.dropDown ? "visible" : "invisible"}>
-                <ShoesDropdown gender={'Men'} />
+                <ShoesDropdown gender={this.state.dropDownGender} genderQuery={`${this.state.dropDownGender.toLowerCase()}s`}/>
             </div>
             </>
         )

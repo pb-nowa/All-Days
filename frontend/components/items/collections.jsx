@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Item from './item';
 import Filter from './filter';
@@ -54,7 +55,6 @@ class Collections extends React.Component {
                 openFilter: true
             });
         }
-        console.log(this.state);
     }
     
     render() {
