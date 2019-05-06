@@ -73,8 +73,8 @@ class Collections extends React.Component {
     }
     
     render() {
-        console.log(this.state);
-        console.log(this.props);
+        console.log(this.state.items);
+        console.log(this.state.filters);
         const populateItems = () => {
             const items = this.props.items.map(item => {
             return (
