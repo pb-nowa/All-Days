@@ -110,4 +110,19 @@
         border: 1px solid rgba(100, 100, 100, 0.867);
         background-color: white;
     }
+
+    .size-selections {
+        width: 350px;
+        .size-selections-container {
+            display: flex;
+            .size {
+                box-sizing: border-box;
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+                                
+
+            }
+        }
+    }
 }

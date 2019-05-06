@@ -61,7 +61,8 @@ class Header extends React.Component {
                             <h2 onClick={() => this.handleDropDown("Men")}>MEN</h2>
                         </div>
                         <div className="nav-link">
-                            <h2 onClick={() => this.handleDropDown("Women")}>WOMEN</h2>
+                            {/* <h2 onClick={() => this.handleDropDown("Women")}>WOMEN</h2> */}
+                            <Link to="/collections/womens">Women</Link>
                         </div>
                         <div className="nav-link"><h2>ABOUT</h2></div>
                     </div>

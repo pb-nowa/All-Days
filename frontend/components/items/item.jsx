@@ -13,6 +13,15 @@ const Item = ({ item }) => {
                 <div>Select Size</div>
                 <div className="plus">+</div>
             </div>
+            <div className="size-selections">
+                <ol className="size-selections-container">
+                    <li className="size">8</li>
+                    <li className="size">9</li>
+                    <li className="size">10</li>
+                    <li className="size">11</li>
+                    <li className="size">12</li>
+                </ol>
+            </div>
 
         </div>
     )

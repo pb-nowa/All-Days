@@ -11,7 +11,7 @@ class Filter extends React.Component {
         ));
         return (
             <div className="filter-nav-item">
-                <ul>{options}</ul>
+                <ul className="filter-nav-items-container">{options}</ul>
             </div>
         )
     }

@@ -9,6 +9,7 @@ class Collections extends React.Component {
         this.state = {
             openFilter: false,
             filters: {},
+            items: []
         };
 
         this.filterItems = this.filterItems.bind(this);
@@ -18,8 +19,8 @@ class Collections extends React.Component {
     }
     
     componentDidMount() {
-        this.id = this.props.match.params.id;
-        this.props.fetchItems(this.id); 
+        const id = this.props.match.params.id;
+        this.props.fetchItems(id); 
         //how do i get the state to reflect the initial props, react is warning me not to user props to define state?
         this.setState( (state, props) => ({
             items: Object.values(props.items),
@@ -28,10 +29,10 @@ class Collections extends React.Component {
 
     componentDidUpdate(prevProps) {
         //how do i update items with ajax request if component isnt nmounted agoin when location changes
+        
         const id = this.props.match.params.id;
-        if (this.props.location !== prevProps.location) {
-            this.id = id;
-            this.props.fetchItems(this.id);
+        if (this.props.location.hash !== prevProps.location.hash) {
+            this.props.fetchItems(id);
         }
     }
 
@@ -53,14 +54,14 @@ class Collections extends React.Component {
         this.setState(state => {
             const newFilters = Object.assign({}, state.filters, { [k]: v });
             return ({ filters: newFilters });
-        },  this.filterItems()
+        },  this.filterItems
         );
     }
 
     clearFilters(){
         this.setState(state => ({
             filters: {}
-        }), this.filterItems()
+        }), this.filterItems
         );
     }
 
@@ -80,7 +81,7 @@ class Collections extends React.Component {
             });
 
             return (
-                <ul className="items">
+                <ul>
                     {items}
                 </ul>
             )
@@ -96,7 +97,7 @@ class Collections extends React.Component {
 
                 <div className="items-body">
                     <div className="filter-header">
-                        <div>All - {`${items.length}`} Results</div>
+                        <div>All - {`${this.state.items.length}`} Results</div>
                         <div className="filter-nav">
                             <div onClick={this.clearFilters} 
                                 className={ !!Object.keys(this.state.filters).length ? "clear-filters" : "clear-filters-invisible"}
