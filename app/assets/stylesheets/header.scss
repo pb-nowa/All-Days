@@ -8,13 +8,12 @@
     width: 100%;
     min-width: 800px;
     min-height: 80px;
-    z-index: 1;
+    z-index: 3;
     transition: all ease-out .2s;
 }
 
 .header {
     display: flex;
-    background-color: transparent;
     box-shadow: none;
 }
 
