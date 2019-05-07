@@ -7,7 +7,8 @@ class Home extends React.Component {
         return(
             <div> 
                 <div className="home-img-header">
-                    <h1>Alldays</h1>
+                    <h1 id="home-page-header">COMFORT THAT COMES NATURALLY</h1>
+                    <img className="home-img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/HH_Desktop_Tree.webp" alt=""/>
 
                     <div id="home-links">
                         <div className="link-item-container">

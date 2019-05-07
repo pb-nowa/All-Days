@@ -88,7 +88,6 @@ class Collections extends React.Component {
     }
     
     render() {
-
         const filterAttrs = this.state.filterAttributes;
         const { filterName, filterId, filterOptions } = filterAttrs;
 
@@ -112,6 +111,7 @@ class Collections extends React.Component {
             <div>
                 <div className="img-header">
                     <h1>SHOES</h1>
+                    <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Men.jpg" alt="" />
                 </div>
 
                 <div className="items-body">

@@ -110,6 +110,17 @@
         height: 350px;
         width: 350px;
         background-color: rgba(250, 250, 250, 1);
+        
+        .item-photo-item {
+            height: 350px;
+            width: 350px;
+            object-fit: cover;
+            transition: .2s;
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+
     }
 
     .item-info {

@@ -47,10 +47,10 @@ item_7 = Item.create!(shoe_id: shoe_2.id, color: "Grey", size: 8)
 item_8 = Item.create!(shoe_id: shoe_2.id, color: "Grey", size: 9)
     item_8.photo.attach(item_7.photo.blob)
 
-item_9 = Item.create!(shoe_id: shoe_3.id, color: "Brown", size: 8)
+item_9 = Item.create!(shoe_id: shoe_3.id, color: "Beige", size: 8)
     file_9 = open('https://s3-us-west-1.amazonaws.com/alldays-seeds/item_9.png')
     item_9.photo.attach(io: file_9, filename: 'item_9.jpg')
-item_10 = Item.create!(shoe_id: shoe_3.id, color: "Brown", size: 9)
+item_10 = Item.create!(shoe_id: shoe_3.id, color: "Beige", size: 9)
     item_10.photo.attach(item_9.photo.blob)
 
 item_11 = Item.create!(shoe_id: shoe_3.id, color: "Red", size: 8)

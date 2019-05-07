@@ -10,12 +10,21 @@
 
     h1 {
         margin: 200px;
+        
     }
+}
+
+.home-img-header-item {
+    height: 790px;
+    width: 100%;
+    transform: translateY(120px);
+    object-fit: cover;
 }
 
 #home-links {
     display: flex;
     align-items: center;
+    z-index: 2;
 
     .link-item-container { 
         width: 350px;
@@ -25,12 +34,13 @@
             display: flex;
             justify-content: center;
             padding: 10px 0px 10px 0px;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid white;
             margin: 30px 20px 30px 20px;
             transition: .2s;
             .link-box {
                 display: flex;
                 justify-content: center;
+                color: white;
             }
         }
 
