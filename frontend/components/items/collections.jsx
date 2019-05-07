@@ -28,12 +28,10 @@ class Collections extends React.Component {
         const id = this.props.match.params.id;
         
         this.props.fetchItems(id).then((data) =>{
-        this.setState({
-            items: Object.values(data.items),
+            this.setState({
+                items: Object.values(data.items),
+            });
         });
-
-        });
-        
     }
 
     componentDidUpdate(prevProps) {        
@@ -45,8 +43,8 @@ class Collections extends React.Component {
 
     filterItems(){
         this.setState((state, props) => {
-            const filters = this.state.filters;
-            const items = this.props.items;
+            const filters = state.filters;
+            const items = props.items;
             const filteredItems = items.filter(item => {
                 return Object.keys(filters).every(key => filters[key] === item[key]);
             });
@@ -73,9 +71,9 @@ class Collections extends React.Component {
     }
 
     handleDropdown(){
-        this.setState(state => ({
-            openFilter: !state.openFilter
-        }));
+        this.setState(state => {
+            return ({ openFilter: !state.openFilter });
+        });
     }
 
     handleFilterAttrs(name, id, ...options){
@@ -124,11 +122,11 @@ class Collections extends React.Component {
                                 className={ !!(Object.keys(this.state.filters).length) ? "clear-filters" : "clear-filters-invisible"}
                                 >CLEAR FILTERS
                             </div>
-                            <ul onClick={this.handleDropdown} >
-                                <li onClick={() => this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>Size</li>
-                                <li onClick={() => this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>Color</li>
-                                <li onClick={() => this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>Style</li>
-                                <li onClick={() => this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>Material</li>
+                            <ul onClick={this.handleDropdown} className="filter-attributes">
+                                <li onClick={() => this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>{this.state.filters.size || "Size"}</li>
+                                <li onClick={() => this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>{this.state.filters.color || "Color"}</li>
+                                <li onClick={() => this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>{this.state.filters.style || "Style"}</li>
+                                <li onClick={() => this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>{this.state.filters.material || "Material"}</li>
                             </ul>
                         </div>
                     </div>
