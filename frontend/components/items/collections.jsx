@@ -20,7 +20,7 @@ class Collections extends React.Component {
         this.filterItems = this.filterItems.bind(this);
         this.addFilter = this.addFilter.bind(this);
         this.clearFilters = this.clearFilters.bind(this);
-        this.handleDropdown = this.handleDropdown.bind(this);
+        // this.handleDropdown = this.handleDropdown.bind(this);
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
     }
     
@@ -70,20 +70,21 @@ class Collections extends React.Component {
         );
     }
 
-    handleDropdown(){
-        this.setState(state => {
-            return ({ openFilter: !state.openFilter });
-        });
-    }
-
     handleFilterAttrs(name, id, ...options){
-        this.setState(() => {
+        return () => this.setState( ({ openFilter, filterAttributes }) => {
             const newFilterAttrs = {
                 filterName: name,
                 filterId: id,
                 filterOptions: options
             };
-            return({ filterAttributes: newFilterAttrs });
+
+            if (openFilter && name !== filterAttributes.filterName){
+                return ({ filterAttributes: newFilterAttrs, openFilter: true });
+            } else if (!openFilter) {
+                return ({ filterAttributes: newFilterAttrs, openFilter: true });
+            } else {
+                return ({ openFilter: false });
+            }
         });
     }
     
@@ -97,7 +98,6 @@ class Collections extends React.Component {
                 <Item item={item} key={`${item.id}`} />)
             });
             
-
             return (
                 <ul>
                     {items}
@@ -137,14 +137,14 @@ class Collections extends React.Component {
                         <div>All - {`${this.state.items.length}`} Results</div>
                         <div className="filter-nav">
                             <div onClick={this.clearFilters} 
-                                className={ !!(Object.keys(this.state.filters).length) ? "clear-filters" : "clear-filters-invisible"}
+                                className={ !!(Object.keys(this.state.filters).length) ? "clear-filters" : "clear-filters-invisible" }
                                 >CLEAR FILTERS
                             </div>
-                            <ul onClick={this.handleDropdown} className="filter-attributes">
-                                <li onClick={() => this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>{this.state.filters.size || "Size"}</li>
-                                <li onClick={() => this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>{this.state.filters.color || "Color"}</li>
-                                <li onClick={() => this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>{this.state.filters.style || "Style"}</li>
-                                <li onClick={() => this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>{this.state.filters.material || "Material"}</li>
+                            <ul className="filter-attributes">
+                                <li onClick={this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>{this.state.filters.size || "Size"}</li>
+                                <li onClick={this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>{this.state.filters.color || "Color"}</li>
+                                <li onClick={this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>{this.state.filters.style || "Style"}</li>
+                                <li onClick={this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>{this.state.filters.material || "Material"}</li>
                             </ul>
                         </div>
                     </div>
