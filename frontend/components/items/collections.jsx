@@ -27,7 +27,7 @@ class Collections extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         
-        this.props.fetchItems(id).then((data) =>{
+        this.props.fetchItems(id).then((data) => {
             this.setState({
                 items: Object.values(data.items),
             });
@@ -107,13 +107,31 @@ class Collections extends React.Component {
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
         
+        const ShoesHeader = ({ gender }) => {
+            if (gender === "mens"){
+                return (
+                    <div>
+                        <div className="items-header-title-container">
+                            <h1 className="items-header-title">MEN'S SHOES</h1>
+                        </div>
+                        <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Men.jpg" alt="" />
+                    </div>
+                )
+            } else {
+                return (
+                    <div>
+                        <div className="items-header-title-container">
+                            <h1 className="items-header-title">WOMEN'S SHOES</h1>
+                        </div>
+                        <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Women.jpg" alt="" />
+                    </div>
+                )
+            }
+        };
+
         return(
             <div>
-                <div className="img-header">
-                    <h1>SHOES</h1>
-                    <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Men.jpg" alt="" />
-                </div>
-
+                <ShoesHeader gender={ this.props.match.params.id }/>
                 <div className="items-body">
                     <div className="filter-header">
                         <div>All - {`${this.state.items.length}`} Results</div>

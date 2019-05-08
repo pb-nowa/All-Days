@@ -42,7 +42,7 @@ class Item extends React.Component {
             <div className="item">
                 <div className="item-photo">
                     <img className="item-photo-item" src={this.props.item.photoUrl} alt=""/>
-                </div>''
+                </div>
                 <div className="item-photo-header">
                     <h3>{item.name}</h3>
                     <div>${item.price}</div>

@@ -18,6 +18,8 @@ shoe_2 = Shoe.create!(style: "Lounger", name: "Men's Wool Loungers", material: "
 shoe_3 = Shoe.create!(style: "Topper", name: "Men's Tree Toppers", material: "Tree", gender: "mens", price: 155)
 shoe_4 = Shoe.create!(style: "Skipper", name: "Men's Tree Skippers", material: "Tree", gender: "mens", price: 95)
 
+shoe_9 = Shoe.create!(style: "Runner", name: "Men's Tree Runners", material: "Tree", gender: "mens", price: 95)
+
 shoe_5 = Shoe.create!(style: "Runner", name: "Women's Wool Runners", material: "Wool", gender: "womens", price: 95)
 shoe_6 = Shoe.create!(style: "Topper", name: "Women's Tree Toppers", material: "Tree", gender: "womens", price: 115)
 shoe_7 = Shoe.create!(style: "Breezer", name: "Women's Tree Breezers", material: "Tree", gender: "womens", price: 95)
@@ -108,4 +110,28 @@ item_31 = Item.create!(shoe_id: shoe_8.id, color: "White", size: 8)
 item_32 = Item.create!(shoe_id: shoe_8.id, color: "White", size: 9)
     item_32.photo.attach(item_1.photo.blob)
 
+###############################  runners  ##########################################
+item_33 = Item.create!(shoe_id: shoe_1.id, color: "Beige", size: 8)
+    file_33 = open('https://s3-us-west-1.amazonaws.com/alldays-seeds/item_33.png')
+    item_33.photo.attach(io: file_33, filename: 'item_33.jpg')
+# item_34 = Item.create!(shoe_id: shoe_1.id, color: "Beige", size: 9)
+#     item_4.photo.attach(item_33.photo.blob)
+
+item_35 = Item.create!(shoe_id: shoe_1.id, color: "Green", size: 8)
+    file_35 = open('https://s3-us-west-1.amazonaws.com/alldays-seeds/item_35.png')
+    item_35.photo.attach(io: file_35, filename: 'item_35.jpg')
+# item_36 = Item.create!(shoe_id: shoe_1.id, color: "Green", size: 9)
+#     item_35.photo.attach(item_35.photo.blob)
+
+item_37 = Item.create!(shoe_id: shoe_9.id, color: "Brown", size: 8)
+    file_37 = open('https://s3-us-west-1.amazonaws.com/alldays-seeds/item_37.png')
+    item_37.photo.attach(io: file_37, filename: 'item_37.jpg')
+# item_38 = Item.create!(shoe_id: shoe_9.id, color: "Brown", size: 9)
+#     item_37.photo.attach(item_37.photo.blob)
+
+item_39 = Item.create!(shoe_id: shoe_9.id, color: "White", size: 8)
+    file_39 = open('https://s3-us-west-1.amazonaws.com/alldays-seeds/item_39.png')
+    item_39.photo.attach(io: file_39, filename: 'item_39.jpg')
+# item_40 = Item.create!(shoe_id: shoe_9.id, color: "White", size: 9)
+#     item_39.photo.attach(item_39.photo.blob)
 

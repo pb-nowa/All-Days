@@ -88,6 +88,29 @@
 
 }
 
+.img-header-item {
+    height: 440px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.items-header-title-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 440px;
+    width: 100%;
+
+    .items-header-title {
+        width: 800px;
+        text-align: center;
+        transform: rotate(-10deg);
+        color: white;
+        font-size: 90px;
+        font-style: italic;
+    }
+}
 
 .item {
     margin: 20px 20px 20px 20px;
@@ -104,7 +127,6 @@
             margin: 15px 0 15px 0;
         }
     }
-
 
     .item-photo {
         height: 350px;
