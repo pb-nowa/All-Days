@@ -4,8 +4,11 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: ""
+            user: {
+                email: "",
+                password: ""
+            },
+            submitted: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
@@ -13,41 +16,45 @@ class LoginForm extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
+        return e => this.setState((prevState) => {
+            const state = prevState.user;
+            return Object.assign({}, state, { [field]: e.currentTarget.value });
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const login = this.props.login;
-        let user = this.state;
+        let user = this.state.user;
         login(user);
+        this.setState({ submitted: true });
     }
 
     demoLogin(e) {
         e.preventDefault();
+        const demoLogin = { email: "demouser@demouser.com", password: "demouser" };
         this.setState({
-            email: "demouser@demouser.com",
-            password: "demouser"
+            user: demoLogin
         }, () => {
             const login = this.props.login;
-            let user = this.state;
+            let user = this.state.user;
             login(user);
             }
         );  
     }
     
     renderErrors() {
-        return (
-            <ul className="errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={i} className="error">
-                        *{error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (this.state.submitted){
+            return (
+                <ul className="errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={i} className="error">
+                            *{error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
     }
 
     render() {

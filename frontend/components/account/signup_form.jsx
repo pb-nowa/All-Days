@@ -4,21 +4,23 @@ class SignupForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            first_name: "",
-            last_name: "",
-            email: "",
-            password: ""
+            user: {
+                first_name: "",
+                last_name: "",
+                email: "",
+                password: ""
+            },
+            submitted: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    update(field){
-        return e => {
-            return this.setState({            
-            [field]: e.currentTarget.value
-            });
-        };
+    update(field) {
+        return e => this.setState((prevState) => {
+            const state = prevState.user;
+            return Object.assign({}, state, { [field]: e.currentTarget.value });
+        });
     }
 
     handleSubmit(e) {
@@ -26,18 +28,21 @@ class SignupForm extends React.Component {
         const signup = this.props.signup;
         let user = this.state;
         signup(user);
+        this.setState({ submitted: true });
     }
 
     renderErrors() {
-        return (
-            <ul className="errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={i} className="error">
-                        *{error}
-                    </li>
-                ))}
-            </ul>
-        );
+        if (this.state.submitted) {
+            return (
+                <ul className="errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={i} className="error">
+                            *{error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
     }
 
     render(){  
