@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Item from './item';
 import Filter from './filter';
@@ -94,8 +93,9 @@ class Collections extends React.Component {
 
         const populateItems = () => {
             const items = this.state.items.map(item => {
-            return (
-                <Item item={item} key={`${item.id}`} />)
+                return (
+                    <Item item={item} key={`${item.id}`} />
+                );
             });
             
             return (
