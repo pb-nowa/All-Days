@@ -1,4 +1,4 @@
-export const receiveShoeItems = (shoe_id) => (
+export const receiveShoe = (shoe_id) => (
     $.ajax({
         method: 'GET',
         url: `/api/shoes/${shoe_id}`

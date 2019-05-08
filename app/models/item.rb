@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     def self.find_by_gender(search_id)
         Item.joins(:shoe)
         .where(shoes: { gender: search_id })
-        .select("items.id", :color, :style, "shoes.name", :material, :gender, :price)
+        .select("items.id", :color, :style, "shoes.name", :material, :gender, :price, :shoe_id)
     end
 
 end

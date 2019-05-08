@@ -1,1 +1,1 @@
-json.extract! @shoe, :style, :name, :material, :gender, :price
+json.extract! @shoe, :id, :style, :name, :material, :gender, :price
