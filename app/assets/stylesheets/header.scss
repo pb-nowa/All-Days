@@ -34,12 +34,12 @@
 
 .visible {
     transform: translateY(80px);
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-out;
 }
 
 .invisible {
     transform: translateY(-880px);
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-out;
 }
 
 #home-page-header {
@@ -138,11 +138,12 @@
 
 h2 {
     font-size: 20px; 
-    transition: .1s;
+    transition: all ease-out .2s;
 }
 
 .a-header-button {
     color: black;
+    
 }
 
 .u-header-button {
