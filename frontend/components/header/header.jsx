@@ -85,6 +85,7 @@ class Header extends React.Component {
         <div id="nav-dropdown" className={this.state.dropDown ? "visible" : "invisible"}>
             <ShoesDropdown gender={this.state.dropDownGender} genderQuery={`${this.state.dropDownGender.toLowerCase()}s`}/>
         </div>
+        <div className={dropDown ?  "overlay-visible" : "overly-invisible" }></div>
         </>
         )
     }

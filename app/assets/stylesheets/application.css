@@ -28,3 +28,19 @@
 .img-header h1 {
     font-size: 64px;
 }
+
+.overlay-visible {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.548);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.overlay-invisible {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}

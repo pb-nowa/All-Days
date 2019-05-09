@@ -15,29 +15,50 @@ class ShoesDropdown extends React.Component {
 
     render() {
         return (
-            <div>
+
+            <div className="nav-dropdown-container">
                 <ul>
                     <li>
-                        <div className="dropdown-shoe-image">missing image</div>
-                        <h3>this.state.shoe</h3>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" className="dropdown-shoe-image-item"src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_3.png" alt=""/>
+                        </div>
+                        <h3>WOOL RUNNERS</h3>
                     </li>
                     <li>
-                        <div className="dropdown-shoe-image">missing image</div>
-                        <h3>this.state.shoe</h3>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_7.png" alt=""/>
+                        </div>
+                        <h3>WOOL LOUNGER</h3>
                     </li>
                     <li>
-                        <div className="dropdown-shoe-image">missing image</div>
-                        <h3>this.state.shoe</h3>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_39.png" alt="" />
+                        </div>
+                        <h3>TREE RUNNER</h3>
                     </li>
                     <li>
-                        <div className="dropdown-shoe-image">missing image</div>
-                        <h3>this.state.shoe</h3>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_9.png" alt="" />
+                        </div>
+                        <h3>TREE TOPPER</h3>
+                    </li>
+                    <li>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_49.png" alt="" />
+                        </div>
+                        <h3>TREE LOUNGER</h3>
+                    </li>
+                    <li>
+                        <div className="dropdown-shoe-image">
+                            <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_13.png" alt="" />
+                        </div>
+                        <h3>TREE SKIPPER</h3>
                     </li>
                 </ul>
                 <div id="dropdown-attributes-container">
                     <div>
                         <h2>Shop All {this.props.gender}</h2>
-                        <div className="arrow">{">"}</div>
+                        <div className="right-arrow">&#10095;</div>
                     </div>
                     <ul>
                         <li>

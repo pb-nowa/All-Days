@@ -10,12 +10,14 @@
 
     .open-filter-dropdown {
         max-height: 200px;
-        transition: .2s ease-in;
     }
 
     .close-filter-dropdown {
         max-height: 0px;
-        transition: .2s ease-out;
+    }
+
+    .animation-wipe {
+        animation: wipe .5s;
     }
 
     .filter-attributes {
@@ -141,6 +143,7 @@
             transition: .2s;
             &:hover {
                 transform: scale(1.03);
+                cursor: pointer;
             }
         }
 
@@ -202,87 +205,6 @@
 
 }
 
-.size-dropdown-attributes {
-    box-sizing: border-box;
-    height: 50px;
-    width: 50px;
-    font-size: 13px;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 2px;
-    padding: 18px;
-    &:hover {
-        background-color: rgb(224, 224, 224);
-        cursor: pointer;
-    }
-}
-
-.color-dropdown-attributes {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    box-sizing: border-box;
-    background-color: beige;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    transform: translateY(-28px);
-
-    &:hover {
-        border: 2px solid rgba(207, 207, 207, 0.863);
-        cursor: pointer;
-    }
-
-    h4 {
-        transform: translateY(18px);
-    }
-
-}
-
-.style-dropdown-attributes {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    box-sizing: border-box;
-    background-color: beige;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    transform: translateY(-28px);
-
-    &:hover {
-        border: 2px solid rgba(207, 207, 207, 0.863);
-        cursor: pointer;
-    }
-
-    h4 {
-        transform: translateY(18px);
-    }
-
-}
-
-.material-dropdown-attributes {
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    box-sizing: border-box;
-    background-color: beige;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    transform: translateY(-28px);
-
-    &:hover {
-        border: 2px solid rgba(207, 207, 207, 0.863);
-        cursor: pointer;
-    }
-
-    h4 {
-        transform: translateY(18px);
-    }
-
-}
-
 .size-selections.hidden-size-selection {
     height: 0px; 
     transition: .2s;
@@ -292,5 +214,4 @@
     height: 90px;
     transition: .2s;
 }
-
 

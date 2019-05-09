@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from './item';
 import Filter from './filter';
+import ShoesHeader from './shoes_header';
 
 class Collections extends React.Component {
     constructor(props){
@@ -13,7 +14,8 @@ class Collections extends React.Component {
                 filterName: "",
                 filterId: "",
                 filterOptions: [],
-            }
+            },
+            shouldAnimate: false,
         };
 
         this.filterItems = this.filterItems.bind(this);
@@ -21,6 +23,7 @@ class Collections extends React.Component {
         this.clearFilters = this.clearFilters.bind(this);
         // this.handleDropdown = this.handleDropdown.bind(this);
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
+        this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
     }
     
     componentDidMount() {
@@ -78,15 +81,20 @@ class Collections extends React.Component {
             };
 
             if (openFilter && name !== filterAttributes.filterName){
-                return ({ filterAttributes: newFilterAttrs, openFilter: true });
+                return ({ filterAttributes: newFilterAttrs, openFilter: true, shouldAnimate: true });
             } else if (!openFilter) {
-                return ({ filterAttributes: newFilterAttrs, openFilter: true });
+                return ({ filterAttributes: newFilterAttrs, openFilter: true, shouldAnimate: true });
             } else {
                 return ({ openFilter: false });
             }
         });
     }
     
+    handleAnimationEnd(){
+        
+        this.setState({shouldAnimate: false});
+    }
+
     render() {
         const filterAttrs = this.state.filterAttributes;
         const { filterName, filterId, filterOptions } = filterAttrs;
@@ -106,28 +114,6 @@ class Collections extends React.Component {
         }
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
-        
-        const ShoesHeader = ({ gender }) => {
-            if (gender === "mens"){
-                return (
-                    <div>
-                        <div className="items-header-title-container">
-                            <h1 className="items-header-title">MEN'S SHOES</h1>
-                        </div>
-                        <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Men.jpg" alt="" />
-                    </div>
-                )
-            } else {
-                return (
-                    <div>
-                        <div className="items-header-title-container">
-                            <h1 className="items-header-title">WOMEN'S SHOES</h1>
-                        </div>
-                        <img className="img-header-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Collections_Lounger_Women.jpg" alt="" />
-                    </div>
-                )
-            }
-        };
 
         return(
             <div>
@@ -142,13 +128,15 @@ class Collections extends React.Component {
                             </div>
                             <ul className="filter-attributes">
                                 <li onClick={this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>{this.state.filters.size || "Size"}</li>
-                                <li onClick={this.handleFilterAttrs("Color", "color", "Grey", "Blue", "Brown", "Black")}>{this.state.filters.color || "Color"}</li>
-                                <li onClick={this.handleFilterAttrs("Style", "style", "Runner", "Topper", "Lounger")}>{this.state.filters.style || "Style"}</li>
+                                <li onClick={this.handleFilterAttrs("Color", "color", "Black", "White", "Grey", "Beige", "Brown", "Red", "Blue", "Green" )}>{this.state.filters.color || "Color"}</li>
+                                <li onClick={this.handleFilterAttrs("Style", "style", "Runner", "Lounger", "Skipper", "Topper")}>{this.state.filters.style || "Style"}</li>
                                 <li onClick={this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>{this.state.filters.material || "Material"}</li>
                             </ul>
                         </div>
                     </div>
-                    <div className={(this.state.openFilter ? "open-filter-dropdown" : "close-filter-dropdown") + " filter-dropdown"}>
+                    <div onAnimationEnd={this.handleAnimationEnd} className={(this.state.openFilter ? "open-filter-dropdown " : "close-filter-dropdown ") +
+                        (this.state.shouldAnimate ? "animation-wipe" : "") +
+                         " filter-dropdown"}>
                         <Filter name={filterName} id={filterId} options={filterOptions} addFilter={this.addFilter}/>
                     </div>
                     {items}

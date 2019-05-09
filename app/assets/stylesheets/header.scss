@@ -66,12 +66,20 @@
     position: fixed;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
     height: 510px;
     width: 100%;
-    min-width: 950px;
+    min-width: 800px;
     padding: 40px 100px 40px 100px;
     background-color: rgb(238, 238, 238);
     z-index: 1;
+}
+
+.nav-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
 }
 
 #nav-dropdown > div > ul {
@@ -80,27 +88,50 @@
     border-bottom: 1px solid #aaaa;
     padding: 20px 0 30px 0;
     margin-bottom: 20px;
+    min-width: 600px;
     
     li {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
+
+        &:hover .dropdown-shoe-image-item {
+            transform: scale(1.06);
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        &:hover h3 {
+            color: black;
+            cursor: pointer;
+            transition: .2s;
+        }
 
         .dropdown-shoe-image {
             box-sizing: border-box;
             height: 150px;
             width: 150px;
-            background-color: #ffffff;
-
+            background-color: #eeeeee;
+            margin: 0 10px 0 10px;
         }
 
         h3 {
             margin-top: 20px;
             color: rgba(117, 117, 117, 0.667);
-            font-size: 18px;
+            font-size: 12px;
+            font-family: 'Raleway', sans-serif;
         }
     }
 }
+
+.dropdown-shoe-image .dropdown-shoe-image-item {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+
 
 #dropdown-attributes-container {
     display: flex;
@@ -118,6 +149,7 @@
             display: flex;
             flex-direction: column;
             padding: 0 15px 0 15px;
+            margin: 0 15px 0 15px;
 
             h3 {
                 color:rgba(117, 117, 117, 0.667);
@@ -137,7 +169,7 @@
     }
 }
 
-.arrow {
+#dropdown-attributes-container .right-arrow {
     margin: 0 10px 0 10px;
     padding: none;
     font-size: 30px;
@@ -233,6 +265,3 @@ footer {
     width: 100%;
     background-color: #1f3131;
 }
-
-
-
