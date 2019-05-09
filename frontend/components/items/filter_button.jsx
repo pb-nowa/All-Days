@@ -5,6 +5,22 @@ class FilterButton extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            isAnimating: false
+        };
+        this.handleAnimation = this.handleAnimation.bind(this);
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.props.whichFilter !== prevProps.whichFilter){
+            this.setState({
+                isAnimating: true
+            });
+        }
+    }
+
+    handleAnimation(){
+        this.setState({ isAnimating: false });
     }
 
     render(){
@@ -20,6 +36,8 @@ class FilterButton extends React.Component {
         return(
             <div className="filter-buttons-container">
                 <h2
+                    className={this.state.isAnimating ? "swipe-left" : ""}
+                    onAnimationEnd={this.handleAnimation}
                     onClick={handleFilterAttrs(name, id, options)}
                     >{ whichFilter || name }
                 </h2>

@@ -103,7 +103,6 @@ class Collections extends React.Component {
     }
     
     handleAnimationEnd(){
-        
         this.setState({shouldAnimate: false});
     }
     
