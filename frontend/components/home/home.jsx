@@ -25,7 +25,7 @@ class Home extends React.Component {
                 </div>
                 <div id="about-panel">
                     <div id="about-panel-container">
-                        <div id="about-panel-image">Missing Image</div>
+                        <img id="about-panel-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/tree_wool_sugar_ca906039-95f4-40a9-9cbc-487b9674520e.jpg" alt=""/>
                         <div id="about-text-container">
                             <h2>Better Things In a Better Way</h2>
                             <p>It starts with better materials, continues with better design, and carries through to better factories and shipping methods. Because we think our planet deserves better. Less waste and pollution. More thoughtfulness and accountability. That sounds better, doesn’t it?</p>
@@ -35,15 +35,15 @@ class Home extends React.Component {
                 </div>
                 <div className="home-panel">
                     <div id="images-panel-container">
-                        <div className="large-image">missingimage</div>
+                        <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+14.33.51.jpeg" alt=""/>
                         <div className="large-image">
                             <div className="small-image-container">
-                                <div className="small-image" >missingimage</div>
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Homepage_Pulp.gif" alt=""/>
                                 <div className="small-image">missingimage</div>
                             </div>
                             <div className="small-image-container">
                                 <div className="small-image">missingimage</div>
-                                <div className="small-image">missingimage</div>
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+15.37.31.jpg" alt=""/>
                             </div>
                         </div>
                     </div>

@@ -25,6 +25,7 @@
         align-items: center;
         &:hover {
             cursor: pointer;
+            user-select: none;
         }
     }
 
@@ -34,20 +35,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.filter-nav-items {
-
-    .filter-nav-items-container {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        margin-right: 80px;
-        height: 80px;
-        li {
-            margin: 0px 0 10px 10px;
-        }
-    }
 }
     
 .filter-header {
@@ -214,4 +201,3 @@
     height: 90px;
     transition: .2s;
 }
-

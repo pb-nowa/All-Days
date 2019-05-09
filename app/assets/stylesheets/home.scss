@@ -66,10 +66,11 @@
         align-items: center;
         
         #about-panel-image {
-            background-color: lightskyblue;
+            object-fit: contain;
             margin: 30px;
-            min-height: 400px;
-            min-width: 400px;
+            height: 400px;
+            width: 500px;
+            overflow: visible;
         }
 
         #about-text-container {
@@ -111,7 +112,7 @@
                 cursor: hover;
                 color: white;
                 background-color: #1f3131;
-        }
+            }
         }
     }
 }
@@ -126,8 +127,9 @@
         margin: 50px;
 
         .large-image {
-            min-height: 400px;
-            min-width: 400px;
+            object-fit: contain;
+            height: 600px;
+            width: 600px;
             background-color: green;
         }
       
@@ -137,9 +139,9 @@
 
             .small-image {
                 box-sizing: border-box;
-                height: 200px;
-                width: 200px;
-                padding: 1px solid black;
+                object-fit: contain;
+                height: 300px;
+                width: 300px;
             }
         }
 
