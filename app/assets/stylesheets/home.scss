@@ -120,17 +120,42 @@
 .home-panel {
     width: 100%;
     margin: 0 0 150px 0;
+    display: flex;
+    justify-content: center;
 
-    #images-panel-container {
+    #images-panel-container {      
         display: flex;
+        position: relative;
+        flex-wrap: wrap;
         justify-content:  center;
         margin: 50px;
+        min-width: 1200px;
+
+        .large-image-label-container {
+            position: absolute;
+            left: 380px;
+            top: 80px;
+
+            h2 {
+                font-family: 'Raleway', sans-serif;
+                font-size: 60px;
+                text-align: center;
+                color: white;
+                line-height: 1.15;
+            }
+
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                text-align: center;
+                color: white;
+            }
+        }
 
         .large-image {
-            object-fit: contain;
+            object-fit: cover;
             height: 600px;
             width: 600px;
-            background-color: green;
         }
       
         .small-image-container {
@@ -139,17 +164,10 @@
 
             .small-image {
                 box-sizing: border-box;
-                object-fit: contain;
+                object-fit: cover;
                 height: 300px;
                 width: 300px;
             }
-        }
-
-        .small-image-container:first-child {
-            background-color: aquamarine;
-        }
-        .small-image-container:last-child {
-            background-color: rgb(250, 250, 154);
         }
     }
 

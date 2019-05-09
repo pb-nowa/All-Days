@@ -21,7 +21,6 @@ class Collections extends React.Component {
         this.filterItems = this.filterItems.bind(this);
         this.addFilter = this.addFilter.bind(this);
         this.clearFilters = this.clearFilters.bind(this);
-        // this.handleDropdown = this.handleDropdown.bind(this);
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
         this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
     }

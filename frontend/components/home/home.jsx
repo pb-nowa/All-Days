@@ -35,17 +35,32 @@ class Home extends React.Component {
                 </div>
                 <div className="home-panel">
                     <div id="images-panel-container">
+                        <div className="large-image-label-container">
+                            <h2>Wool</h2>
+                        <p>Comfort &amp; Flexibility</p>
+                        </div>
                         <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+14.33.51.jpeg" alt=""/>
                         <div className="large-image">
                             <div className="small-image-container">
                                 <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Homepage_Pulp.gif" alt=""/>
-                                <div className="small-image">missingimage</div>
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt=""/>
                             </div>
                             <div className="small-image-container">
-                                <div className="small-image">missingimage</div>
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5069.png" alt=""/>
                                 <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+15.37.31.jpg" alt=""/>
                             </div>
                         </div>
+                        <div className="large-image">
+                            <div className="small-image-container">
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5128.JPG" alt="" />
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt="" />
+                            </div>
+                            <div className="small-image-container">
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5125.JPG" alt="" />
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+14.33.09.jpg" alt="" />
+                            </div>
+                        </div>
+                        <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt="" />
                     </div>
                 </div>
                 <div className="home-panel">
