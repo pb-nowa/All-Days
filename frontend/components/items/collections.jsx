@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from './item';
 import Filter from './filter';
+import FilterButton from './filter_button';
 import ShoesHeader from './shoes_header';
 
 class Collections extends React.Component {
@@ -21,6 +22,7 @@ class Collections extends React.Component {
         this.filterItems = this.filterItems.bind(this);
         this.addFilter = this.addFilter.bind(this);
         this.clearFilters = this.clearFilters.bind(this);
+        this.clearThisFilter = this.clearThisFilter.bind(this);
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
         this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
     }
@@ -65,13 +67,24 @@ class Collections extends React.Component {
     }
 
     clearFilters(){
-        this.setState(state => ({
+        this.setState( ()=> ({
             filters: {}
         }), this.filterItems
         );
     }
 
-    handleFilterAttrs(name, id, ...options){
+    clearThisFilter(key){
+        this.setState(state => {
+            let newFilters = Object.assign({}, state.filters); 
+            delete newFilters[key];
+            return({
+                filters: newFilters
+            });
+        }, this.filterItems
+        );
+    }
+
+    handleFilterAttrs(name, id, options){
         return () => this.setState( ({ openFilter, filterAttributes }) => {
             const newFilterAttrs = {
                 filterName: name,
@@ -93,10 +106,13 @@ class Collections extends React.Component {
         
         this.setState({shouldAnimate: false});
     }
+    
 
     render() {
         const filterAttrs = this.state.filterAttributes;
         const { filterName, filterId, filterOptions } = filterAttrs;
+        const  handleFilterAttrs = this.handleFilterAttrs;
+        const clearThisFilter = this.clearThisFilter;
 
         const populateItems = () => {
             const items = this.state.items.map(item => {
@@ -113,7 +129,6 @@ class Collections extends React.Component {
         }
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
-
         return(
             <div>
                 <ShoesHeader gender={ this.props.match.params.id }/>
@@ -126,10 +141,42 @@ class Collections extends React.Component {
                                 >CLEAR FILTERS
                             </div>
                             <ul className="filter-attributes">
-                                <li onClick={this.handleFilterAttrs("Size", "size", 8, 9, 10, 11, 12)}>{this.state.filters.size || "Size"}</li>
-                                <li onClick={this.handleFilterAttrs("Color", "color", "Black", "White", "Grey", "Beige", "Brown", "Red", "Blue", "Green" )}>{this.state.filters.color || "Color"}</li>
-                                <li onClick={this.handleFilterAttrs("Style", "style", "Runner", "Lounger", "Skipper", "Topper")}>{this.state.filters.style || "Style"}</li>
-                                <li onClick={this.handleFilterAttrs("Material", "material", "Tree", "Wool")}>{this.state.filters.material || "Material"}</li>
+                                <FilterButton   
+                                    handleFilterAttrs={handleFilterAttrs} 
+                                    name={"Size"} 
+                                    id={"size"} 
+                                    options={[8, 9, 10, 11, 12]}
+                                    whichFilter={this.state.filters.size}
+                                    openFilter={this.state.openFilter}
+                                    currentOpenFilter={filterName}
+                                    clearThisFilter={clearThisFilter}/>
+                                <FilterButton   
+                                    handleFilterAttrs={handleFilterAttrs} 
+                                    name={"Color"} 
+                                    id={"color"} 
+                                    options={["Black", "White", "Grey", "Beige", "Brown", "Red", "Blue", "Green"]}
+                                    whichFilter={this.state.filters.color}
+                                    openFilter={this.state.openFilter}
+                                    currentOpenFilter={filterName}
+                                    clearThisFilter={clearThisFilter}/>
+                                <FilterButton   
+                                    handleFilterAttrs={handleFilterAttrs} 
+                                    name={"Style"} 
+                                    id={"style"} 
+                                    options={["Runner", "Lounger", "Skipper", "Topper"]}
+                                    whichFilter={this.state.filters.style}
+                                    openFilter={this.state.openFilter}
+                                    currentOpenFilter={filterName}
+                                    clearThisFilter={clearThisFilter}/>
+                                <FilterButton   
+                                    handleFilterAttrs={handleFilterAttrs} 
+                                    name={"Material"} 
+                                    id={"material"} 
+                                    options={["Tree", "Wool"]}
+                                    whichFilter={this.state.filters.material}
+                                    openFilter={this.state.openFilter}
+                                    currentOpenFilter={filterName}
+                                    clearThisFilter={clearThisFilter}/>
                             </ul>
                         </div>
                     </div>

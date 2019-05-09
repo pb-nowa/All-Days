@@ -12,11 +12,11 @@ const dropDownButton = ({ headerIsActive, handleDropDown, dropDown, title, id, d
 
     return (
         <>
-            <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}
-                onClick={() => handleDropDown(id)}>
-                <h2>{title}</h2>
-                <ArrowOrMinus dropDown={dropDown} gender={dropDownGender} componentGender={id}/>
-            </div>
+        <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}
+            onClick={() => handleDropDown(id)}>
+            <h2>{title}</h2>
+            <ArrowOrMinus dropDown={dropDown} gender={dropDownGender} componentGender={id}/>
+        </div>
         </>
     )
 };

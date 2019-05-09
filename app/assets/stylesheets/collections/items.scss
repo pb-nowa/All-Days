@@ -23,9 +23,25 @@
     .filter-attributes {
         display: flex;
         align-items: center;
+
         &:hover {
             cursor: pointer;
             user-select: none;
+        }
+
+        .filter-buttons-container {
+            display: flex;
+            
+            h2 {
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                padding-top: 16px;
+            }
+            h5 {
+                font-size: 40px;
+                margin: 0 25px 0 10px;
+            }
+            
         }
     }
 
