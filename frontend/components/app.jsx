@@ -18,7 +18,6 @@ const App = () => (
             <Route exact path="/" component={Home}/>
             <Route component={NoMatchingRoute}/>
         </Switch>
-        <footer></footer>
     </div>
 );
 

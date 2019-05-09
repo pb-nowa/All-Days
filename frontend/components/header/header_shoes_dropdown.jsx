@@ -8,7 +8,7 @@ class ShoesDropdown extends React.Component {
             return  gender == "Men" ? "mens" : "womens";
         };
         this.state = {
-          gender: this.defineGender(this.props.gender)
+          gender: this.defineGender(this.props.gender),          
         };  
 
     }
@@ -82,7 +82,9 @@ class ShoesDropdown extends React.Component {
                     </ul>
 
                 </div>
-                <div className="arrow"><h2>^</h2></div>
+                <div className="up-arrow-container">
+                    <h2 onClick={() => this.props.handleDropDown(this.props.gender)} className="up-arrow">&#8963;</h2>
+                </div>
             </div>
         )
     }

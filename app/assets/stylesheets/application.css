@@ -44,3 +44,14 @@
     width: 100%;
     z-index: 0;
 }
+
+.loading-page {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 5;
+}

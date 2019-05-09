@@ -3,11 +3,13 @@ import Item from './item';
 import Filter from './filter';
 import FilterButton from './filter_button';
 import ShoesHeader from './shoes_header';
+import Loading from '../loading';
 
 class Collections extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            loading: true,
             openFilter: false,
             filters: {},
             items: [],
@@ -17,6 +19,7 @@ class Collections extends React.Component {
                 filterOptions: [],
             },
             shouldAnimate: false,
+            itemsAnimate: true,
         };
 
         this.filterItems = this.filterItems.bind(this);
@@ -25,6 +28,7 @@ class Collections extends React.Component {
         this.clearThisFilter = this.clearThisFilter.bind(this);
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
         this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+        this.clearGlobalAnimations = this.clearGlobalAnimations.bind(this);
     }
     
     componentDidMount() {
@@ -35,6 +39,9 @@ class Collections extends React.Component {
                 items: Object.values(data.items),
             });
         });
+        window.setTimeout(() => {
+            this.setState({ loading: false });
+        }, 900);
     }
 
     componentDidUpdate(prevProps) {        
@@ -61,14 +68,18 @@ class Collections extends React.Component {
     addFilter(k, v){
         this.setState(state => {
             const newFilters = Object.assign({}, state.filters, { [k]: v });
-            return ({ filters: newFilters });
+            return ({ 
+                filters: newFilters,
+                itemsAnimate: true
+            });
         },  this.filterItems
         );
     }
 
     clearFilters(){
         this.setState( ()=> ({
-            filters: {}
+            filters: {},
+            itemsAnimate: true
         }), this.filterItems
         );
     }
@@ -78,7 +89,8 @@ class Collections extends React.Component {
             let newFilters = Object.assign({}, state.filters); 
             delete newFilters[key];
             return({
-                filters: newFilters
+                filters: newFilters,
+                itemsAnimate: true
             });
         }, this.filterItems
         );
@@ -105,6 +117,10 @@ class Collections extends React.Component {
     handleAnimationEnd(){
         this.setState({shouldAnimate: false});
     }
+
+    clearGlobalAnimations(){
+        this.setState({ itemsAnimate: false });
+    }
     
 
     render() {
@@ -116,7 +132,12 @@ class Collections extends React.Component {
         const populateItems = () => {
             const items = this.state.items.map(item => {
                 return (
-                    <Item item={item} key={`${item.id}`} />
+                    <Item 
+                        clearGlobalAnimations={this.clearGlobalAnimations}
+                        itemsAnimate={this.state.itemsAnimate}
+                        item={item} 
+                        key={`${item.id}`} 
+                    />
                 );
             });
             
@@ -128,12 +149,16 @@ class Collections extends React.Component {
         }
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
+        if (this.state.loading) {
+            return (<Loading />);
+        } else {
         return(
+            
             <div>
                 <ShoesHeader gender={ this.props.match.params.id }/>
                 <div className="items-body">
                     <div className="filter-header">
-                        <div>All - {`${this.state.items.length}`} Results</div>
+                        <div>{`${!!(Object.keys(this.state.filters).length) ? "" : "All - "} ${this.state.items.length} Results`}</div>
                         <div className="filter-nav">
                             <div onClick={this.clearFilters} 
                                 className={ !!(Object.keys(this.state.filters).length) ? "clear-filters" : "clear-filters-invisible" }
@@ -187,8 +212,9 @@ class Collections extends React.Component {
                     {items}
 
                 </div>
+                <footer></footer>
             </div>
-        )
+        )}
     }
 }
 

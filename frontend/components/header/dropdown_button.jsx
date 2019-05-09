@@ -8,6 +8,7 @@ const dropDownButton = ({ headerIsActive, handleDropDown, dropDown, title, id, d
         } else {
             return (<h5 className="down-arrow">&#8964;</h5>);
         }
+
     };
 
     return (

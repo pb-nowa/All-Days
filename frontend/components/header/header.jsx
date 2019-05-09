@@ -13,11 +13,14 @@ class Header extends React.Component {
             dropDown: false,
             dropDownGender: "Men",
             headerIsActive: false,
+            isAnimating: false,
+            bounce: false,
         };
         this.handleScroll = this.handleScroll.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
         this.enterHeaderHover = this.enterHeaderHover.bind(this);
         this.leaveHeaderHover = this.leaveHeaderHover.bind(this);
+        this.handleAnimation = this.handleAnimation.bind(this);
     }
 
     componentDidMount(){
@@ -39,13 +42,36 @@ class Header extends React.Component {
     }
 
     handleDropDown(dropDownGender){
-        this.setState(state => ({
-            dropDown: !state.dropDown,
-            dropDownGender: dropDownGender
-            
-        }));
+        
+        this.setState(state => {
+            if (state.dropDown && dropDownGender !== state.dropDownGender){
+               return ({
+                    dropDown: true,
+                    dropDownGender: dropDownGender,
+                    isAnimating: true,
+                    bounce: true,
+               });
+            } else if (!state.dropDown) {
+                return ({
+                    dropDown: true,
+                    dropDownGender: dropDownGender,
+                    isAnimating: true,
+                    bounce: false,
+                });
+            } else {
+                return ({
+                    dropDown: false,
+                    dropDownGender: dropDownGender,
+                    bounce: false,
+                });              
+            }
+        });
     }
-    
+
+    handleAnimation(){
+        this.setState({ isAnimating: false });
+    }
+
     render() {
         const headerIsActive = this.state.headerIsActive;
         const dropDown = this.state.dropDown;
@@ -82,8 +108,11 @@ class Header extends React.Component {
                 </div>
             </div>
         </div>
-        <div id="nav-dropdown" className={this.state.dropDown ? "visible" : "invisible"}>
-            <ShoesDropdown gender={this.state.dropDownGender} genderQuery={`${this.state.dropDownGender.toLowerCase()}s`}/>
+        <div
+            onAnimationEnd={this.handleAnimation} 
+            id="nav-dropdown" 
+                    className={!this.state.dropDown ? "invisible" : !this.state.isAnimating ? "visible" : this.state.bounce ? "visible swipe-up-down" : "visible swipe-down" }>
+            <ShoesDropdown gender={this.state.dropDownGender} genderQuery={`${this.state.dropDownGender.toLowerCase()}s`} handleDropDown={this.handleDropDown}/>
         </div>
         <div className={dropDown ?  "overlay-visible" : "overly-invisible" }></div>
         </>

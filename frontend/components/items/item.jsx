@@ -4,7 +4,7 @@ class Item extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            dropDown: false
+            dropDown: false,
         };
         this.handleSizeDropdown = this.handleSizeDropdown.bind(this);
     }
@@ -39,7 +39,9 @@ class Item extends React.Component {
         };
 
         return (
-            <div className="item">
+            <div 
+                onAnimationEnd={this.state.clearGlobalAnimations}
+                className={this.props.itemsAnimate ? "item fadeInUp" : "item"}>
                 <div className="item-photo">
                     <img className="item-photo-item" src={this.props.item.photoUrl} alt=""/>
                 </div>

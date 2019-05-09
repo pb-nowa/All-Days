@@ -1,10 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../loading';
 
 class Home extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            loading: true
+        };
+    }
 
+    componentDidMount(){
+        window.setTimeout(() => {
+        this.setState({ loading: false });
+        }, 600);
+    }
     render(){
+        if (this.state.loading){
+            return (<Loading/>);
+        } else {
         return(
+
             <div> 
                 <div className="home-img-header">
                     <h1 id="home-page-header">COMFORT THAT COMES NATURALLY</h1>
@@ -80,8 +96,9 @@ class Home extends React.Component {
                         </ul>
                     </div>
                 </div>
+                <footer></footer>
             </div>
-        );
+        );}
     }
 }
 

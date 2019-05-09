@@ -9,6 +9,7 @@ const Account = ({ login, signup, logout, currentUser, errors }) => {
     <div className="forms-page">
       <LoginForm login={login} errors={errors}/>
       <SignupForm signup={signup} errors={errors}/>
+      <footer></footer>
     </div>
   )
 
@@ -27,6 +28,7 @@ const Account = ({ login, signup, logout, currentUser, errors }) => {
           </div>
         </div>
       </div>
+      <footer></footer>
     </div>
   )
 

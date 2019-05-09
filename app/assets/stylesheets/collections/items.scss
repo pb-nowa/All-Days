@@ -51,6 +51,8 @@
 
             h5 {
                 margin-left: 10px;
+                box-sizing: border-box;
+                width: 20px;
             }
 
             .X {
@@ -143,10 +145,15 @@
     }
 }
 
+.fadeInUp {
+  animation: fadeInUp .3s;
+}
+
 .item {
     margin: 20px 20px 20px 20px;
     // background-color: lightblue;
     border: 1px solid red($color: #ad7878);
+
     
     .item-photo-header {
         display: flex;
