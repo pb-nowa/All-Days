@@ -112,7 +112,7 @@ class Header extends React.Component {
             onAnimationEnd={this.handleAnimation} 
             id="nav-dropdown" 
                     className={!this.state.dropDown ? "invisible" : !this.state.isAnimating ? "visible" : this.state.bounce ? "visible swipe-up-down" : "visible swipe-down" }>
-            <ShoesDropdown gender={this.state.dropDownGender} genderQuery={`${this.state.dropDownGender.toLowerCase()}s`} handleDropDown={this.handleDropDown}/>
+            <ShoesDropdown gender={this.state.dropDownGender} genderQuery={ this.state.dropDownGender === "Men" ? "mens" : "womens"} handleDropDown={this.handleDropDown}/>
         </div>
         <div className={dropDown ?  "overlay-visible" : "overly-invisible" }></div>
         </>

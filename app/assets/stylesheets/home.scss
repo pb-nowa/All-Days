@@ -126,10 +126,10 @@
     #images-panel-container {      
         display: flex;
         position: relative;
-        flex-wrap: wrap;
         justify-content:  center;
         margin: 50px;
-        min-width: 1200px;
+        min-width: 600px;
+        min-height: 900px;
 
         .large-image-label-container {
             position: absolute;
@@ -142,6 +142,7 @@
                 text-align: center;
                 color: white;
                 line-height: 1.15;
+                text-shadow: 1px 1px #a8a8a852;
             }
 
             p {
@@ -149,7 +150,13 @@
                 font-size: 16px;
                 text-align: center;
                 color: white;
+                text-shadow: 1px 1px #a8a8a852;
             }
+        }
+
+        .right-side {
+            left: 830px;
+            top: 775px;
         }
 
         .large-image {
@@ -215,4 +222,10 @@
             }
         }
     }
+}
+
+.left-image-container {
+    display: flex;
+    flex-direction: column;
+
 }

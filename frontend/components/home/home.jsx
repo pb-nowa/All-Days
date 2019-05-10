@@ -55,28 +55,31 @@ class Home extends React.Component {
                             <h2>Wool</h2>
                         <p>Comfort &amp; Flexibility</p>
                         </div>
+                        <div className="left-image-container">
                         <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+14.33.51.jpeg" alt=""/>
-                        <div className="large-image">
-                            <div className="small-image-container">
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Homepage_Pulp.gif" alt=""/>
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt=""/>
-                            </div>
-                            <div className="small-image-container">
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5069.png" alt=""/>
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+15.37.31.jpg" alt=""/>
-                            </div>
-                        </div>
-                        <div className="large-image">
-                            <div className="small-image-container">
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5128.JPG" alt="" />
-                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt="" />
-                            </div>
                             <div className="small-image-container">
                                 <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5125.JPG" alt="" />
                                 <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+14.33.09.jpg" alt="" />
                             </div>
+                                {/* <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+15.37.31.jpg" alt=""/>  */}
                         </div>
-                        <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt="" />
+                        <div className="left-image-container">
+                           
+                            {/* <div className="small-image-container">
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5128.JPG" alt="" />
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5092.JPG" alt="" />
+                            </div> */}
+                            <div className="small-image-container">
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/Homepage_Pulp.gif" alt="" />
+                                <img className="small-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/2019-05-02+15.37.31.jpg" alt=""/>
+                            </div>
+                        
+                        <img className="large-image" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/IMG_5069.png" alt="" />
+                        </div>
+                        <div className="large-image-label-container right-side">
+                            <h2>Tree</h2>
+                            <p>Durability &amp; Support</p>
+                        </div>
                     </div>
                 </div>
                 <div className="home-panel">
@@ -84,7 +87,7 @@ class Home extends React.Component {
                         <h1>ALLDAYS IN THE NEWS</h1>
                         <div id="quotes-container">
                             <div className="arrow-button">{"<"}</div>
-                            <h2>"This quote is a link that says very good things about this brand"</h2>
+                            <a href="http://time.com/4243338/allbirds-wool-runners/"><h2>"This quote is a link that says very good things about this brand"</h2></a>
                             <div className="arrow-button">{">"}</div>
                         </div>
                         <ul>

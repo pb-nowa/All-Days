@@ -2,16 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class ShoesDropdown extends React.Component {
-    constructor(props){
-        super(props);
-        this.defineGender = (gender) => {
-            return  gender == "Men" ? "mens" : "womens";
-        };
-        this.state = {
-          gender: this.defineGender(this.props.gender),          
-        };  
-
-    }
 
     render() {
         return (
@@ -57,26 +47,28 @@ class ShoesDropdown extends React.Component {
                 </ul>
                 <div id="dropdown-attributes-container">
                     <div>
-                        <h2>Shop All {this.props.gender}</h2>
+                        <Link onClick={() => this.props.handleDropDown(this.props.gender)} to={`/collections/${this.props.genderQuery}`}>
+                            <h2>Shop All {this.props.gender}</h2>
+                        </Link>
                         <div className="right-arrow">&#10095;</div>
                     </div>
                     <ul>
                         <li>
                             <h3>BY STYLE</h3>
                             <ol>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Runners</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Toppers</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Loungers</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Skippers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Runners</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Toppers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Loungers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Skippers</Link>
                             </ol>
                         </li>
                         <li>
                             <h3>BY COLOR</h3>
                             <ol>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Runners</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Toppers</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Loungers</Link>
-                                <Link className="attribute-link" to={`/collections/${this.state.genderQuery}`}>Skippers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Runners</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Toppers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Loungers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Skippers</Link>
                             </ol>
                         </li>
                     </ul>
