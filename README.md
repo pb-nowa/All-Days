@@ -66,9 +66,7 @@ filterItems(){
                 return Object.keys(filters).every(key => filters[key] === item[key]);
             });
             
-        return ({
-            items: filteredItems
-        });
+        return ({ items: filteredItems });
     });
 }
 
