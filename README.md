@@ -76,4 +76,6 @@ In the future, I would like to push a query string to history as the filters are
 
 # Main Nav Bar and Dropdown
 
+![Image of Dropdown Menu](https://github.com/pb-nowa/All-Days/blob/master/app/assets/images/screenshots/dropdown_home_active.png)
+
 
