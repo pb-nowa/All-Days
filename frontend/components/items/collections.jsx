@@ -47,7 +47,11 @@ class Collections extends React.Component {
     componentDidUpdate(prevProps) {        
         const id = this.props.match.params.id;
         if (this.props.location.pathname !== prevProps.location.pathname) {
-            this.props.fetchItems(id);
+            this.props.fetchItems(id).then((data) => {
+                this.setState({ 
+                    items: Object.values(data.items),
+                });
+            });
         }
     }
 
