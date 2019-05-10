@@ -152,7 +152,7 @@ class Collections extends React.Component {
             )
         }
         
-        const items = this.props.items.length ? populateItems() : (<div>ITEMS WERE NOT SET</div>);
+        const items = this.props.items.length ? populateItems() : (<div>ITEMS ARE UPDATING</div>);
         if (this.state.loading) {
             return (<Loading />);
         } else {
