@@ -1,0 +1,122 @@
+.home-img-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 780px;
+    width: 100%;
+    background-color: #97c58c;
+    z-index: 1;
+
+    h1 {
+        margin: 200px;
+    }
+}
+
+.home-img-header-item {
+    height: 790px;
+    width: 100%;
+    transform: translateY(120px);
+    object-fit: cover;
+}
+
+#home-links {
+    display: flex;
+    align-items: center;
+    z-index: 1; 
+
+    .link-item-container { 
+        width: 350px;
+        margin: 0 0 20px 0;
+
+        .home-link {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px 10px 0px;
+            border-bottom: 2px solid white;
+            margin: 30px 20px 30px 20px;
+            transition: .2s;
+            .link-box {
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-family: 'Raleway', sans-serif;
+                font-size: 12px;
+            }
+        }
+
+        .home-link#womens-button:hover {
+            margin: 30px 110px 30px 110px;
+        }
+        .home-link#mens-button:hover {
+            margin: 30px 120px 30px 120px;
+        }
+    }
+}
+
+.home-panel {
+    width: 100%;
+    margin: 0 0 150px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.home-panel #images-panel-container {      
+    display: flex;
+    position: relative;
+    justify-content:  center;
+    margin: 50px;
+    min-width: 600px;
+    min-height: 900px;
+
+    .large-image-label-container {
+        position: absolute;
+        left: 380px;
+        top: 80px;
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 60px;
+            text-align: center;
+            color: white;
+            line-height: 1.15;
+            text-shadow: 1px 1px #a8a8a852;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px #a8a8a852;
+        }
+    }
+
+    .right-side {
+        left: 830px;
+        top: 775px;
+    }
+
+    .large-image {
+        object-fit: cover;
+        height: 600px;
+        width: 600px;
+    }
+    
+    .small-image-container {
+        display: flex;
+        flex-direction: row;
+
+        .small-image {
+            box-sizing: border-box;
+            object-fit: cover;
+            height: 300px;
+            width: 300px;
+        }
+    }
+}
+
+.left-image-container {
+    display: flex;
+    flex-direction: column;
+}

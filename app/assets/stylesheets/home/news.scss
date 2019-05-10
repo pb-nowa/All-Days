@@ -1,0 +1,44 @@
+.home-panel #news-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #quotes-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+
+        .arrow-button{
+            font-size: 50px;
+            color: #aaaa;
+        }
+
+        h2 {
+            max-width: 800px;
+            margin: 36px;
+            text-align: center;
+            text-decoration: underline;
+            font-size: 30px;
+            line-height: 1.25;
+        }
+    }
+        
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        margin: 40px;
+
+        li {
+            margin: 30px;
+            color: #aaaa;
+            font-size: 30px;
+        }
+    }
+}

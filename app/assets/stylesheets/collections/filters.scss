@@ -6,10 +6,10 @@
         justify-content: flex-end;
         margin-right: 80px;
         height: 80px;
+        
         li {
             user-select: none;
-        }
-        
+        }  
     }
 }
 
@@ -175,7 +175,6 @@
     h4 {
         transform: translateX(40px);
     }
-
 }
 
 #Tree {
@@ -191,4 +190,3 @@
         background-color: rgb(245, 246, 238);
     }
 }
-

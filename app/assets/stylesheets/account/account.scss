@@ -1,104 +1,53 @@
-.forms-page {
+.my-account-page {
     display: flex;
-    position: relative;
-    overflow: auto;
-    min-height: 1000px;
     width: 100%;
-    min-width: 500px;
-    margin: 80px 0 0 0;
-    background-color: #eee8e6;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;   
-}
-
-.form {
-    display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 100px 50px 50px 50px;
-    
-    h2 {
-    font-size: 24px;
-    font-weight: bolder;
-    margin: 20px 20px 30px 20px;
-    }
 
-    ul {
-        margin: 0px 10px 20px 10px;
-        
-        li {
-            margin: 10px 10px 20px 10px;
+    .my-account-page-header {
+
+        display: flex;
+        flex-direction: column; 
+        height: 100px;
+        padding: 100px 100px 50px 100px;
+        align-items: center;
+        justify-content: flex-start;
+
+        h1 {
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        .sign-out {
+            font-size: 16px;
+            padding: 5px;
+            text-decoration: underline;
+            background-color: #eee8e6;
+            border: none;
         }
     }
 }
 
-#login {
-    min-height: 300px;
-    max-width: 400px;
-}
+.my-account-page-body {
+    display: flex;
+    padding: 40px;
+    margin: 40px;
+    justify-content: center;
 
-#sign-up {
-    min-height: 800px;
-    max-width: 400px;
-}
-
-form {
-    input {
-        box-sizing: border-box;
-        min-height: 40px;
-        min-width: 390px;
-        padding: 20px;
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: whitesmoke;
         border: 1px solid rgb(230, 229, 229);
-        margin: 15px;
-        font-size: 16px;
-        border-radius: 2px;
-    }
-
-    label {
-        margin: 20px;
+        box-shadow: 2px #dddd;
     }
 }
 
-
-.submit:hover { 
-    cursor: pointer;
-    background-color: #eee8e6;
-    color: black;
-}
-
-.submit {
-    background-color: black;
-    color: white;
-    box-sizing: border-box;
-    font-size: 12px;
-    min-height: 40px;
-    min-width: 390px;
-    padding: 20px;
-    margin: 20px;
-    transition: 0.3s;
-    border: 2px solid black;
-}
-
-#required-fields {
-    font-size: 14px;
-    font-weight: bold;
-    align-self: center;
-    margin: 0 0 28px 35px;
-}
-
-.notice {
-    font-size: 10px;
-    align-self: center;
-    margin: 0 0 28px 35px;
-}
-
-.errors {
-    margin: 0
-}
-
-.error {
-    font-size: 14px;
-    margin: 5px;
-    color: red($color: #5d0d0d);
+.my-account-page-body > div {
+    margin: 40px;
+    height: 200px;
+    width: 300px;
 }

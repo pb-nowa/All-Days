@@ -78,10 +78,14 @@ class ShoesDropdown extends React.Component {
                         <li>
                             <h3>BY COLOR</h3>
                             <ol>
-                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Runners</Link>
-                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Toppers</Link>
-                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Loungers</Link>
-                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Skippers</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Black</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>White</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Grey</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Beige</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Brown</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Red</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Blue</Link>
+                                <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>Green</Link>
                             </ol>
                         </li>
                     </ul>
