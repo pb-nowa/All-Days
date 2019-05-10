@@ -13,7 +13,7 @@ class Home extends React.Component {
     componentDidMount(){
         window.setTimeout(() => {
         this.setState({ loading: false });
-        }, 900);
+        }, 1500);
     }
     render(){
         if (this.state.loading){
@@ -45,8 +45,7 @@ class Home extends React.Component {
                         <div id="about-text-container">
                             <h2>Better Things In a Better Way</h2>
                             <p>It starts with better materials, continues with better design, and carries through to better factories and shipping methods. Because we think our planet deserves better. Less waste and pollution. More thoughtfulness and accountability. That sounds better, doesn’t it?</p>
-                            <input type="submit" id="learn-more" value="LEARN MORE ABOUT OUR MATERIALS"/>
-                            <a href="https://www.allbirds.com/pages/our-materials-wool"></a>
+                            <Link className="link-box" to={'/collections/mens'}><input type="submit" id="learn-more" value="LEARN MORE ABOUT OUR MATERIALS"/></Link>
                         </div>
                     </div>
                 </div>

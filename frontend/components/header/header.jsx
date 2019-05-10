@@ -98,14 +98,14 @@ class Header extends React.Component {
                         dropDownGender={this.state.dropDownGender}
                         title="WOMEN" 
                         id="Women"/>
-                    <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link" }><h2>ABOUT</h2></div>
+                    {/* <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link" }><h2>ABOUT</h2></div> */}
                 </div>
                 <div id="logo">
                     <Link to="/" className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link logo"}><h1>Alldays</h1></Link>
                 </div>
                 <div className="nav" id="right-nav">
                     <div ><Link to={'/account'}><h2 className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"} id="account-link">ACCOUNT</h2></Link></div>
-                    <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2>CART</h2></div>
+                    {/* <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2>CART</h2></div> */}
                 </div>
             </div>
         </div>

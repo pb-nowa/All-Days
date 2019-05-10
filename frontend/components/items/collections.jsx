@@ -169,7 +169,7 @@ class Collections extends React.Component {
                                 >CLEAR FILTERS
                             </div>
                             <ul className="filter-attributes">
-                                <FilterButton   
+                                {/* <FilterButton   
                                     handleFilterAttrs={handleFilterAttrs} 
                                     name={"Size"} 
                                     id={"size"} 
@@ -177,7 +177,7 @@ class Collections extends React.Component {
                                     whichFilter={this.state.filters.size}
                                     openFilter={this.state.openFilter}
                                     currentOpenFilter={filterName}
-                                    clearThisFilter={clearThisFilter}/>
+                                    clearThisFilter={clearThisFilter}/> */}
                                 <FilterButton   
                                     handleFilterAttrs={handleFilterAttrs} 
                                     name={"Color"} 
