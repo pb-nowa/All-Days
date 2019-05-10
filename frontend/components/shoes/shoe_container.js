@@ -4,13 +4,13 @@ import Shoe from './shoe';
 import { selectShoeById, selectItemsByShoe } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-    const id = ownProps.match.params.id;
-    const shoe = selectShoeById(state, id);
-    const items = selectItemsByShoe(state, id);
-    return ({
-        shoe: shoe,
-        items: items,
-    });
+    // const id = ownProps.match.params.id;
+    // const shoe = selectShoeById(state, id);
+    // const items = selectItemsByShoe(state, id);
+    // return ({
+    //     shoe: shoe,
+    //     items: items,
+    // });
 };
 
 const mapDispatchToProps = dispatch => {
