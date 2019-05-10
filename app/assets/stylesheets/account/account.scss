@@ -1,3 +1,5 @@
+@import 'utils';
+
 .my-account-page {
     display: flex;
     width: 100%;
@@ -23,7 +25,7 @@
             font-size: 16px;
             padding: 5px;
             text-decoration: underline;
-            background-color: #eee8e6;
+            background-color: $bg-pink;
             border: none;
             &:hover {
                 cursor: pointer;

@@ -1,5 +1,7 @@
+@import 'utils';
+
 footer {
     height: 200px;
     width: 100%;
-    background-color: #1f3131;
+    background-color: $bg-green;
 }

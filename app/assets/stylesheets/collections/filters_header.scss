@@ -1,3 +1,5 @@
+@import 'utils';
+
 .filter-header {
     height: 100px;
     margin: 0 80px 20px 80px;
@@ -10,8 +12,8 @@
         display: flex;
         
         .clear-filters {
-            font-family: 'Raleway', sans-serif;
-            background-color: rgba(250, 250, 250, 1);
+            font-family: $title-font-1;
+            background-color: $bg-light-grey;
             box-sizing: border-box;
             padding: 10px;
             margin: 12px 15px 10px 10px;
@@ -83,7 +85,7 @@
             }  
 
             h2 {
-                font-family: 'Raleway', sans-serif;
+                font-family: $title-font-1;
                 font-size: 16px;
                 padding-top: 14px;
                 margin-left: 10px;

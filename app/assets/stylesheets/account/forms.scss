@@ -1,3 +1,5 @@
+@import 'utils';
+
 .forms-page {
     display: flex;
     position: relative;
@@ -6,7 +8,7 @@
     width: 100%;
     min-width: 500px;
     padding-top: 80px;
-    background-color: #eee8e6;
+    background-color: $bg-pink;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;   

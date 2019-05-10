@@ -1,3 +1,5 @@
+@import 'utils';
+
 .home-img-header {
     display: flex;
     flex-direction: column;
@@ -40,7 +42,7 @@
                 display: flex;
                 justify-content: center;
                 color: white;
-                font-family: 'Raleway', sans-serif;
+                font-family: $title-font-1;
                 font-size: 12px;
             }
         }
@@ -75,7 +77,7 @@
         top: 80px;
 
         h2 {
-            font-family: 'Raleway', sans-serif;
+            font-family: $title-font-1;
             font-size: 60px;
             text-align: center;
             color: white;
@@ -84,7 +86,7 @@
         }
 
         p {
-            font-family: 'Raleway', sans-serif;
+            font-family: $title-font-1;
             font-size: 16px;
             text-align: center;
             color: white;

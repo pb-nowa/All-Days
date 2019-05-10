@@ -1,3 +1,5 @@
+@import 'utils';
+
 #about-panel {
     width: 100%;
     box-sizing: border-box;
@@ -57,7 +59,7 @@
             #learn-more:hover { 
                 cursor: hover;
                 color: white;
-                background-color: #1f3131;
+                background-color: $bg-green;
             }
         }
     }

@@ -1,3 +1,5 @@
+@import 'utils';
+
 #header {
     display: flex;
     flex-direction: column;
@@ -50,12 +52,12 @@
 }
 
 .nav-link h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: $title-font-1;
     font-size: 12px; 
 }
 
 h2.nav-link {
-    font-family: 'Raleway', sans-serif;
+    font-family: $title-font-1;
     font-size: 12px; 
 }
 
@@ -102,13 +104,13 @@ h2.nav-link {
 
 .nav-link .down-arrow {
     font-size: 40px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $body-font-1;
     padding-bottom: 8px;
 }
 
 .nav-link .minus {
     font-size: 30px;
-    font-family: 'Poppins', sans-serif;
+    font-family: $body-font-1;
     padding-bottom: 0px;
     padding-left: 8px;
 }
@@ -128,6 +130,6 @@ h2.nav-link {
     padding-right: 80px;
 }
 .nav-link.logo h1{
-    font-family: 'Raleway', sans-serif;
+    font-family: $title-font-1;
     font-weight: normal;
 }
