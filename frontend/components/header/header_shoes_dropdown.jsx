@@ -8,42 +8,55 @@ class ShoesDropdown extends React.Component {
 
             <div className="nav-dropdown-container">
                 <ul>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
+                        
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" className="dropdown-shoe-image-item"src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_3.png" alt=""/>
                         </div>
                         <h3>WOOL RUNNERS</h3>
                     </li>
+                    </Link>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_7.png" alt=""/>
                         </div>
                         <h3>WOOL LOUNGER</h3>
                     </li>
+                    </Link>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_39.png" alt="" />
                         </div>
                         <h3>TREE RUNNER</h3>
                     </li>
+                    </Link>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_9.png" alt="" />
                         </div>
                         <h3>TREE TOPPER</h3>
                     </li>
+                    </Link>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_49.png" alt="" />
                         </div>
                         <h3>TREE LOUNGER</h3>
                     </li>
+                    </Link>
+                    <Link onClick={() => this.props.handleDropDown(this.props.gender)} className="attribute-link" to={`/collections/${this.props.genderQuery}`}>
                     <li>
                         <div className="dropdown-shoe-image">
                             <img className="dropdown-shoe-image-item" src="https://s3-us-west-1.amazonaws.com/alldays-seeds/item_13.png" alt="" />
                         </div>
                         <h3>TREE SKIPPER</h3>
                     </li>
+                    </Link>
                 </ul>
                 <div id="dropdown-attributes-container">
                     <div>
