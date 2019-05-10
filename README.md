@@ -39,7 +39,7 @@ The local state of the filters is maintained in the parent component (Collection
 ```javascript
 
 // 'collections.jsx'
-// Any time a filter is added or removed, the filteredItems function is called. 
+
 // Each filter is nested under this.state.filters. When state is updated,
 // setState is given a function that has access to the current state. 
 // this.state.filters is then shallowly duplicated, and only the specific 
@@ -71,5 +71,9 @@ filterItems(){
 }
 
 ```
+
+In the future, I would like to push a query string to history as the filters are updated. By storing filters in their own hash, this functionality will be easily implemented. This would also allows users to share the collections page with a specific filter implemented. 
+
+# Main Nav Bar and Dropdown
 
 
