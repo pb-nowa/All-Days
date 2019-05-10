@@ -46,6 +46,7 @@ class Home extends React.Component {
                             <h2>Better Things In a Better Way</h2>
                             <p>It starts with better materials, continues with better design, and carries through to better factories and shipping methods. Because we think our planet deserves better. Less waste and pollution. More thoughtfulness and accountability. That sounds better, doesn’t it?</p>
                             <input type="submit" id="learn-more" value="LEARN MORE ABOUT OUR MATERIALS"/>
+                            <a href="https://www.allbirds.com/pages/our-materials-wool"></a>
                         </div>
                     </div>
                 </div>
