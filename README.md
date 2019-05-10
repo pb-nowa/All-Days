@@ -1,24 +1,38 @@
-# README
+# Alldays
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Alldays is an online shoe store modelled after Allbirds.com. It is built on a Rails/PostgreSQL backend with a React/Redux frontend. 
 
-Things you may want to cover:
+The current state of the project was built in 2 weeks, and will have added features soon.
 
-* Ruby version
+## Features
 
-* System dependencies
+* Comfortable design flow and navigation
 
-* Configuration
+* Responsive and detailed animations for improved UI/UX
 
-* Database creation
+* Smooth loading and transitions through tabs and pages
 
-* Database initialization
+* Interactive dropdown menus
 
-* How to run the test suite
+* Compatible at most screen resolutions (Not yet mobile compatible)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Secure user authentication with BCrypt
 
-* Deployment instructions
+**Upcoming Features**
 
-* ...
+* Add items to a shopping cart
+
+* Navigate to additional information for each product
+
+* Mobile friendly layout
+
+## Collections Page
+
+The collections page is the main user interface of the site. It updates for mens or womens shoes respectively. The user can filter through different attribute combinations using the sleek dropdown menu underneath the header of the page. 
+
+When selecting attributes, the selected options appear in place of the attribute title. The user may unselect specific options or 'clear filters'. On the left, the user can find an updated total of the current options. As shoes update to fit the given filter, the images render appropriately.
+
+
+
+
+
