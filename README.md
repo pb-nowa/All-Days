@@ -74,7 +74,7 @@ filterItems(){
 
 ```
 
-In the future, I would like to push a query string to history as the filters are updated. This functionality can be easily implemented since filters are stored in their own hash. This would also allows users to share the collections page with a specific filter implemented. 
+In the future, I would like to push a query string to history as the filters are updated. This functionality can be easily implemented since filters are stored in their own hash. This would also allow users to share the collections page url with a specificly configured filter.
 
 # Main Nav Bar and Dropdown
 
@@ -82,7 +82,7 @@ The nav bar and dropdown menu are the main way for the user to navigate the site
 
 While above a cover photo, the dropdown menu will remain transparent. The text however will be white, for visibility. Any time the user interacts with the header, it blends to white and buttons become hoverable with a black underline. 
 
-Clicking on 'men'or 'women' will produce a dropdown menu that has links to other parts of the site. Buttons have corresponding hover effects that link to the 'collections' pages. Any user interaction that renders a change to the text or menu view is masked/illustrated with a corresponding animation to signal an update. 
+Clicking on 'men' or 'women' will produce a dropdown menu that has links to other parts of the site. Buttons have corresponding hover effects that link to the 'collections' pages. Any user interaction that renders a change to the text or menu view is masked/illustrated with a corresponding animation to signal an update. 
 
 ![Image of Dropdown Menu](https://github.com/pb-nowa/All-Days/blob/master/app/assets/images/screenshots/dropdown_home_active.png)
 
