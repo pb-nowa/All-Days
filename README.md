@@ -41,8 +41,9 @@ The local state of the filters is maintained in the parent component (Collection
 // 'collections.jsx'
 // Any time a filter is added or removed, the filteredItems function is called. 
 // Each filter is nested under this.state.filters. When state is updated,
-// setState is given a function that has access to the current state. this.state.filters is then
-// shallowly duplicated, and only the specific attribute is changed. 
+// setState is given a function that has access to the current state. 
+// this.state.filters is then shallowly duplicated, and only the specific 
+// attribute is changed. 
 
 addFilter(k, v){
     this.setState(state => {
