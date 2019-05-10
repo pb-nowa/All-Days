@@ -41,7 +41,7 @@ class Collections extends React.Component {
         });
         window.setTimeout(() => {
             this.setState({ loading: false });
-        }, 1200);
+        }, 1500);
     }
 
     componentDidUpdate(prevProps) {        
