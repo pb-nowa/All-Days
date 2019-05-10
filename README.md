@@ -1,5 +1,7 @@
 # Alldays
 
+[Live Demo](http://alldays.herokuapp.com/#/)
+
 Alldays is an online shoe store modelled after Allbirds.com. It is built on a Rails/PostgreSQL backend with a React/Redux frontend. 
 
 The current state of the project was built in 2 weeks, and will have added features soon.
@@ -72,10 +74,13 @@ filterItems(){
 
 ```
 
-In the future, I would like to push a query string to history as the filters are updated. By storing filters in their own hash, this functionality will be easily implemented. This would also allows users to share the collections page with a specific filter implemented. 
+In the future, I would like to push a query string to history as the filters are updated. This functionality can be easily implemented since filters are stored in their own hash. This would also allows users to share the collections page with a specific filter implemented. 
 
 # Main Nav Bar and Dropdown
 
+The nav bar and dropdown menu are the main way for the user to navigate the site. 
+
+The nav bar remains transparent while hovering any cover photos. 
 ![Image of Dropdown Menu](https://github.com/pb-nowa/All-Days/blob/master/app/assets/images/screenshots/dropdown_home_active.png)
 
 
