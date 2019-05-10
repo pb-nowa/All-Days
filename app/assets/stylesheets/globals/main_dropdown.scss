@@ -97,17 +97,24 @@
         text-align: center;
         color: black;
         transform: translateY(-2px);
+        user-select: none;
+        &:hover {
+            cursor: pointer;
+        }
     }
     
     ul {
         display: flex;
         padding: 12px;
+        width: 500px;
+        justify-content: flex-start;
 
         li {
             display: flex;
             flex-direction: column;
             padding: 0 15px 0 15px;
-            margin: 0 15px 0 15px;
+            margin: 0 15px 0 40px;
+    
 
             h3 {
                 color:rgba(117, 117, 117, 0.667);
@@ -132,10 +139,16 @@
 #dropdown-attributes-container > div {
     display: flex;
     padding: 15px;
+    
+    a {
+        height: 20px;
+        user-select: none;
+    }
 
     h2 {
         font-family: 'Raleway', sans-serif;
         font-size: 14px; 
+        user-select: none;
     }
 }
 

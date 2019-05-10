@@ -25,6 +25,10 @@
             text-decoration: underline;
             background-color: #eee8e6;
             border: none;
+            &:hover {
+                cursor: pointer;
+                user-select: none;
+            }
         }
     }
 }
