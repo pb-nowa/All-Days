@@ -4,12 +4,11 @@ class SignupForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user: {
+           
                 first_name: "",
                 last_name: "",
                 email: "",
-                password: ""
-            },
+                password: "",
             submitted: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,16 +16,18 @@ class SignupForm extends React.Component {
     }
 
     update(field) {
-        return e => this.setState((prevState) => {
-            const state = prevState.user;
-            return Object.assign({}, state, { [field]: e.currentTarget.value });
-        });
+        return e => this.setState(
+            {
+                
+                    [field]: e.currentTarget.value
+                
+            });
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const signup = this.props.signup;
-        let user = this.state;
+        let user = Object.assign({}, this.state);
         signup(user);
         this.setState({ submitted: true });
     }

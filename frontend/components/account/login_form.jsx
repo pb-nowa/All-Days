@@ -4,10 +4,8 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                email: "",
-                password: ""
-            },
+            email: "",
+            password: "",
             submitted: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,16 +14,18 @@ class LoginForm extends React.Component {
     }
 
     update(field) {
-        return e => this.setState((prevState) => {
-            const state = prevState.user;
-            return Object.assign({}, state, { [field]: e.currentTarget.value });
-        });
+
+        return e => this.setState(
+            {
+                [field]: e.currentTarget.value 
+            }
+        );
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const login = this.props.login;
-        let user = this.state.user;
+        let user = Object.assign({}, this.state);
         login(user);
         this.setState({ submitted: true });
     }
