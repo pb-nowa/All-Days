@@ -25,6 +25,7 @@ class Header extends React.Component {
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
+        this.setState({ headerIsActive: !!(this.state.scrollPosition || this.state.isHovered || this.state.dropDown || this.props.location.pathname === "/account") });
     }
     handleScroll() {
         this.setState( () => ({ scrollPosition: window.pageYOffset }) );

@@ -13,7 +13,7 @@ class Home extends React.Component {
     componentDidMount(){
         window.setTimeout(() => {
         this.setState({ loading: false });
-        }, 600);
+        }, 900);
     }
     render(){
         if (this.state.loading){
