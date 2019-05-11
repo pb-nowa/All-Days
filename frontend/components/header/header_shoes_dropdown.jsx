@@ -92,7 +92,7 @@ class ShoesDropdown extends React.Component {
 
                 </div>
                 <div className="up-arrow-container">
-                    <h2 onClick={() => this.props.handleDropDown(this.props.gender)} className="up-arrow">&#8963;</h2>
+                    <h2 onClick={() => this.props.handleDropDown(this.props.gender)} className="up-arrow">&#9650;</h2>
                 </div>
             </div>
         )

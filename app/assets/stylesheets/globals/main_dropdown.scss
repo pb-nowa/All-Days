@@ -95,6 +95,7 @@
     .right-arrow {
         margin: 0 10px 0 10px;
         padding: none;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
         text-align: center;
         color: black;
@@ -157,15 +158,17 @@
 .up-arrow-container {
     display: flex;
     justify-content: center;
+    align-content: flex-end;
     .up-arrow {
-        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        font-size: 26px;
         color: $mid-grey;
         font-family: $body-font-1; 
-        text-align: center;  
-        transform: translateY(-5px);
         transition: .2s;
         width: 16px;
-
+        bottom: 6px;
+        
         &:hover {
             color: black;
             cursor: pointer;

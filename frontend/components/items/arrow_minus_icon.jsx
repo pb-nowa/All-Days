@@ -25,7 +25,7 @@ const ArrowOrMinus = ({ openFilter, currentOpenFilter, name, id, options, clearT
             <h5
                 className="down-arrow"
                 onClick={handleFilterAttrs(name, id, options)}
-            >&#8964;
+            >&#9660;
             </h5>
         );
     }

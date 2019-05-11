@@ -6,9 +6,8 @@ const dropDownButton = ({ headerIsActive, handleDropDown, dropDown, title, id, d
         if (dropDown && gender === componentGender) {
             return (<h5 className="minus"> &minus;</h5>);
         } else {
-            return (<h5 className="down-arrow">&#8964;</h5>);
+            return (<h5 className="down-arrow">&#9660;</h5>);
         }
-
     };
 
     return (

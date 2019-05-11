@@ -34,7 +34,6 @@
     display: flex;
     justify-content: space-between;
     align-items: space-around;
-    overflow: scroll;
     width: 100%;
 }
 
@@ -87,7 +86,7 @@ h2.nav-link {
 
 .nav-link {
     display: flex;
-    min-width: 40px;
+    width: 54px;
     padding-bottom: 10px;
     height: 12px;
     align-items: center;
@@ -103,9 +102,10 @@ h2.nav-link {
 }
 
 .nav-link .down-arrow {
-    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
     font-family: $body-font-1;
-    padding-bottom: 8px;
+    padding: 8px 0 6px 11px;
 }
 
 .nav-link .minus {
@@ -117,9 +117,10 @@ h2.nav-link {
 
 #logo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 20px;
+    padding-right: 110px;
     user-select: none
     
 }
