@@ -29,6 +29,7 @@ class Collections extends React.Component {
         this.handleFilterAttrs = this.handleFilterAttrs.bind(this);
         this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
         this.clearGlobalAnimations = this.clearGlobalAnimations.bind(this);
+        this.imageLoaded = this.imageLoaded.bind(this);
     }
     
     componentDidMount() {
@@ -39,9 +40,9 @@ class Collections extends React.Component {
                 items: Object.values(data.items),
             });
         });
-        window.setTimeout(() => {
-            this.setState({ loading: false });
-        }, 1500);
+        // window.setTimeout(() => {
+        //     this.setState({ loading: false });
+        // }, 1500);
     }
 
     componentDidUpdate(prevProps) {        
@@ -126,6 +127,9 @@ class Collections extends React.Component {
         this.setState({ itemsAnimate: false });
     }
     
+    imageLoaded() {
+        this.setState({ loading: false });
+    }
 
     render() {
         const filterAttrs = this.state.filterAttributes;
@@ -153,13 +157,12 @@ class Collections extends React.Component {
         }
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS ARE UPDATING</div>);
-        if (this.state.loading) {
-            return (<Loading />);
-        } else {
+
         return(
-            
+            <>
+            <Loading isLoading={this.state.loading}/>
             <div>
-                <ShoesHeader gender={ this.props.match.params.id }/>
+                <ShoesHeader imageLoaded={this.imageLoaded} gender={ this.props.match.params.id }/>
                 <div className="items-body">
                     <div className="filter-header">
                         <div>{`${!!(Object.keys(this.state.filters).length) ? "" : "All - "} ${this.state.items.length} Results`}</div>
@@ -218,7 +221,8 @@ class Collections extends React.Component {
                 </div>
                 <footer></footer>
             </div>
-        )}
+            </>
+        )
     }
 }
 
