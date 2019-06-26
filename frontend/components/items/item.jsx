@@ -43,7 +43,7 @@ class Item extends React.Component {
                 onAnimationEnd={this.state.clearGlobalAnimations}
                 className={this.props.itemsAnimate ? "item fadeInUp" : "item"}>
                 <div className="item-photo">
-                    <img className="item-photo-item" src={this.props.item.photoUrl} alt=""/>
+                    <img onClick={this.handleSizeDropdown} className="item-photo-item" src={this.props.item.photoUrl} alt=""/>
                 </div>
                 <div className="item-photo-header">
                     <h3>{item.name}</h3>
