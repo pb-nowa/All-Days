@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CartItem from './cart_item';
 
 class Cart extends React.Component {
     constructor(props){
@@ -19,9 +20,7 @@ class Cart extends React.Component {
                             <div className="cart-close-button">close</div>
                         </div>
                         <ul className="cart-items">
-                            <li>cart item component</li>
-                            <li>cart item component</li>
-                            <li>cart item component</li>
+                            <CartItem />
                         </ul>
                     </div>
                     <div>
