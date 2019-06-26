@@ -1,3 +1,4 @@
+
 import { fetchShoe } from '../../actions/shoes_actions';
 import { connect } from 'react-redux';
 import Shoe from './shoe';

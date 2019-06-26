@@ -4,14 +4,9 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
     return({
-        items: state.entities.cart
+        items: Object.values(state.entities.cart)
     });
 };
 
-const mapDispatchToProps = dispatch => {
-    return({
 
-    });
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps)(Cart);

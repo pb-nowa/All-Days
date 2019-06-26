@@ -8,7 +8,8 @@ class Cart extends React.Component {
     }
 
     render(){
-        const { open, handleCartOpen } = this.props;
+        const { open, handleCartOpen, items } = this.props;
+        console.log(this.props);
         return(
         <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
