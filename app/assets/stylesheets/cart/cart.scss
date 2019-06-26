@@ -2,14 +2,22 @@
 
 .closed-cart {
     opacity: 0;
+    z-index: 0;
+
+    height: 0;
+    width: 0; 
+    overflow: hidden;
+}
+
+.open-cart {
+    height: 100%;
+    width: 100%;
 }
 
 .cart-page-container {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -18,10 +26,16 @@
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0);
-    height: 100%;
-    width: 100%;
     top: 0;
     left: 0;
+}
+
+.open-container {
+    height: 100%;
+    width: 100%;
+}
+
+.in-front {
     z-index: 15;
 }
 
@@ -33,7 +47,6 @@
     width: 450px;
     height: 100%;
     align-self: flex-end;
-    z-index: 15;
     padding: 20px;
 }
 

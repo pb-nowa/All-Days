@@ -10,10 +10,10 @@ class Cart extends React.Component {
     render(){
         const { open, handleCartOpen } = this.props;
         return(
-        <div className={ open ? "cart-page-container" : "cart-page-container closed-cart"}>
-            <div className="cart-container">
-                <div className="overlay-visible"></div>
-                <div className="cart-sidebar">
+        <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
+            <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
+                <div className={open ? "overlay-visible open-cart" : "closed-cart"}></div>
+                <div className={ open ? "cart-sidebar in-front" : "cart-sidebar closed-cart"}>
                     <div>
                         <div className="cart-header">
                             <h2>CART</h2>

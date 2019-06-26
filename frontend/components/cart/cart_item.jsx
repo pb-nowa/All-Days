@@ -6,6 +6,23 @@ class CartItem extends React.Component {
         this.state = {
             quantity: 1,
         };
+        this.addQuantity = this.addQuantity.bind(this);
+        this.removeQuantity = this.removeQuantity.bind(this);
+    }
+
+    addQuantity(){
+        const quantity = this.state.quantity + 1;
+        this.setState({
+            quantity
+        });
+    }
+
+    removeQuantity(){
+        let quantity = this.state.quantity;
+        if (quantity > 1) quantity--;
+        this.setState({
+            quantity
+        });
     }
 
     render(){
@@ -23,9 +40,9 @@ class CartItem extends React.Component {
                     </div>
                     <div className="quantity-container">
                         <div className="quantity-buttons">
-                            <div className="change-quantity">-</div>
+                            <div onClick={this.removeQuantity} className="change-quantity">-</div>
                             <div className="quantity-integer">{`${quantity}`}</div>
-                            <div className="change-quantity">+</div>
+                            <div onClick={this.addQuantity} className="change-quantity">+</div>
                         </div>
                     </div>
                 </div>
