@@ -18,7 +18,7 @@ class Item extends React.Component {
     }
 
     render(){
-        const { item } = this.props;
+        const { item, addToCart } = this.props;
 
         const SelectOrAdd = (props) => {
             if (!props.dropDown){
@@ -55,7 +55,7 @@ class Item extends React.Component {
                 </div>
                 <div className={"size-selections " + (this.state.dropDown ? "unhidden-size-selection" : "hidden-size-selection")}>
                     <ol className="size-selections-container">
-                        <li className="size"><h4>8</h4></li>
+                        <li onClick={() => addToCart(item, 8) } className="size"><h4>8</h4></li>
                         <li className="size"><h4>9</h4></li>
                         <li className="size"><h4>10</h4></li>
                         <li className="size"><h4>11</h4></li>

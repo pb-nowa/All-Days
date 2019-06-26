@@ -132,7 +132,9 @@ class Collections extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         const filterAttrs = this.state.filterAttributes;
+        const { addToCart } = this.props;
         const { filterName, filterId, filterOptions } = filterAttrs;
         const  handleFilterAttrs = this.handleFilterAttrs;
         const clearThisFilter = this.clearThisFilter;
@@ -141,6 +143,7 @@ class Collections extends React.Component {
             const items = this.state.items.map(item => {
                 return (
                     <Item 
+                        addToCart={addToCart}
                         clearGlobalAnimations={this.clearGlobalAnimations}
                         itemsAnimate={this.state.itemsAnimate}
                         item={item} 
@@ -157,7 +160,7 @@ class Collections extends React.Component {
         }
         
         const items = this.props.items.length ? populateItems() : (<div>ITEMS ARE UPDATING</div>);
-
+        
         return(
             <>
             <Loading isLoading={this.state.loading}/>
