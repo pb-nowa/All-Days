@@ -1,5 +1,9 @@
 @import 'utils';
 
+.closed-cart {
+    opacity: 0;
+}
+
 .cart-page-container {
     position: absolute;
     top: 0;

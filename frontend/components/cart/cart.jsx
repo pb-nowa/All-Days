@@ -5,22 +5,19 @@ import CartItem from './cart_item';
 class Cart extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            open: false,
-        };
-
     }
 
     render(){
+        const { open, handleCartOpen } = this.props;
         return(
-        <div className="cart-page-container">
+        <div className={ open ? "cart-page-container" : "cart-page-container closed-cart"}>
             <div className="cart-container">
                 <div className="overlay-visible"></div>
                 <div className="cart-sidebar">
                     <div>
                         <div className="cart-header">
                             <h2>CART</h2>
-                            <div className="cart-close-button">close</div>
+                            <div onClick={handleCartOpen} className="cart-close-button">close</div>
                         </div>
                         <ul className="cart-items">
                             <CartItem />

@@ -3,9 +3,13 @@ import React from 'react';
 class CartItem extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            quantity: 1,
+        };
     }
 
     render(){
+        const { quantity } = this.state;
         return(
             <div className="cart-item-container">
                 <div className="cart-item-image-container">
@@ -20,7 +24,7 @@ class CartItem extends React.Component {
                     <div className="quantity-container">
                         <div className="quantity-buttons">
                             <div className="change-quantity">-</div>
-                            <div className="quantity-integer">1</div>
+                            <div className="quantity-integer">{`${quantity}`}</div>
                             <div className="change-quantity">+</div>
                         </div>
                     </div>

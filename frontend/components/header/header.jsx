@@ -24,6 +24,7 @@ class Header extends React.Component {
         this.enterHeaderHover = this.enterHeaderHover.bind(this);
         this.leaveHeaderHover = this.leaveHeaderHover.bind(this);
         this.handleAnimation = this.handleAnimation.bind(this);
+        this.handleCartOpen = this.handleCartOpen.bind(this);
     }
 
     componentDidMount(){
@@ -73,6 +74,13 @@ class Header extends React.Component {
         });
     }
 
+    handleCartOpen(){
+        const openCart = !this.state.openCart;
+        this.setState({
+            openCart
+        });
+    }
+
     handleAnimation(){
         this.setState({ isAnimating: false });
     }
@@ -109,7 +117,7 @@ class Header extends React.Component {
                 </div>
                 <div className="nav" id="right-nav">
                     <div ><Link to={'/account'}><h2 className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"} id="account-link">ACCOUNT</h2></Link></div>
-                    <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2>CART</h2></div>
+                    <div onClick={this.handleCartOpen} className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2 >CART</h2></div>
                 </div>
             </div>
         </div>
@@ -120,7 +128,7 @@ class Header extends React.Component {
             <ShoesDropdown gender={this.state.dropDownGender} genderQuery={ this.state.dropDownGender === "Men" ? "mens" : "womens"} handleDropDown={this.handleDropDown}/>
         </div>
         <div className={dropDown ?  "overlay-visible" : "overly-invisible" }></div>
-        <Cart open={this.state.openCart}/>
+        <Cart open={this.state.openCart} handleCartOpen={this.handleCartOpen}/>
         </>
         )
     }
