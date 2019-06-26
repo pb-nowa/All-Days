@@ -1,9 +1,10 @@
+
 import Cart from './cart';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
     return({
-
+        items: state.entities.cart
     });
 };
 

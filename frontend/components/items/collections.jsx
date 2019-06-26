@@ -132,7 +132,6 @@ class Collections extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         const filterAttrs = this.state.filterAttributes;
         const { addToCart } = this.props;
         const { filterName, filterId, filterOptions } = filterAttrs;
