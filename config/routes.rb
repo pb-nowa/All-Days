@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :items, only: [:show]
     resources :users, only: [:create]
+    resources :carts, only: [:create, :edit, :destroy, :show]
     resources :shoes,  only: [:show]
     resource :session, only: [:create, :destroy]
   end
