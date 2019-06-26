@@ -9,7 +9,10 @@ class Cart extends React.Component {
 
     render(){
         const { open, handleCartOpen, items } = this.props;
-        console.log(this.props);
+
+        const cartItems = items.map( item => {
+            return <CartItem item={item} key={`${item.id}-${item.size}`}/>
+        })
         return(
         <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
@@ -21,7 +24,7 @@ class Cart extends React.Component {
                             <div onClick={handleCartOpen} className="cart-close-button">close</div>
                         </div>
                         <ul className="cart-items">
-                            <CartItem />
+                            {cartItems}
                         </ul>
                     </div>
                     <div>
