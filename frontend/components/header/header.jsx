@@ -106,7 +106,7 @@ class Header extends React.Component {
                 </div>
                 <div className="nav" id="right-nav">
                     <div ><Link to={'/account'}><h2 className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"} id="account-link">ACCOUNT</h2></Link></div>
-                    {/* <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2>CART</h2></div> */}
+                    <div className={(headerIsActive ? "a-header-button" : "u-header-button") + " nav-link"}><h2>CART</h2></div>
                 </div>
             </div>
         </div>
