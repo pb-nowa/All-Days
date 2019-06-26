@@ -1,3 +1,5 @@
+@import 'utils';
+
 .cart-page-container {
     position: absolute;
     top: 0;
@@ -20,6 +22,9 @@
 }
 
 .cart-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: white;
     width: 450px;
     height: 100%;
@@ -35,5 +40,80 @@
     align-items: center;
 }
 
+.cart-close-button {
+    &:hover {
+        cursor: pointer;
+    }
+    color: black;
+}
+
+.cart-header h2 {
+    font-family: $title-font-1;
+    font-size: 22px;
+}
+
+.cart-items {
+    border-top: 1px solid $mid-grey;
+    border-bottom: 1px solid $mid-grey;
+    padding: 20px 0 20px 0;
+}
+
+.divider {
+    border-top: 1px solid $mid-grey;
+    border-bottom: 1px solid $mid-grey;
+    padding: 10px 0 10px 0;
+    font-size: 14px;
+}
+
+.shopping-link {
+    &:hover {
+        cursor: pointer;
+        color: black;
+    }
+    color: $mid-dark-grey;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.cart-totals {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 0;
+}
+
+.cart-costs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0 5px 0;
+}
+
+.cart-button {
+    color: white;
+    background-color: $bg-green;
+    box-sizing: content-box;
+    font-size: 16px;
+    height: 40px;
+    width: calc(100% - 20px);
+    margin: 20px 20px 0 20px;
+    transition: 0.3s;
+    border: 2px solid black;
+    border-radius: 3px;
+    align-self: center;
+}
+
+.cart-button:hover { 
+    cursor: hover;
+    color: black;
+    background-color: white;
+}
+
+.cart-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-light-green;
+    height: 80px;
+}
 
 

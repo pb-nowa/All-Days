@@ -13,31 +13,37 @@ class Cart extends React.Component {
             <div className="cart-container">
                 <div className="overlay-visible"></div>
                 <div className="cart-sidebar">
-                    <div className="cart-header">
-                        <h2>CART</h2>
-                        <div>close</div>
-                    </div>
-                    <ul>
-                        <li>cart item component</li>
-                        <li>cart item component</li>
-                        <li>cart item component</li>
-                    </ul>
-                    <div>Looking for something else?</div>
-                    <Link to={'/collections/mens'}>Keep Shopping</Link>
                     <div>
-                        <div>
-                            <h3>Subtotal</h3>
-                            <div>Cost var</div>
+                        <div className="cart-header">
+                            <h2>CART</h2>
+                            <div className="cart-close-button">close</div>
                         </div>
-                        <div>
-                            <h3>Shipping</h3>
-                            <div>FREE</div>
-                        </div>
-                        <input type="button" value="CHECKOUT"/>
+                        <ul className="cart-items">
+                            <li>cart item component</li>
+                            <li>cart item component</li>
+                            <li>cart item component</li>
+                        </ul>
                     </div>
                     <div>
-                        <p>Looking for more shoes?</p>
-                        <p>Click <Link to={'colelctions/mens'}>here</Link></p>
+                        <div className="divider">Looking for something else?
+                            &nbsp;
+                            <Link className="shopping-link" to={'/collections/mens'}>Keep Shopping</Link>
+                        </div>
+                        <div className="cart-totals">
+                            <div className="cart-costs">
+                                <h3>Subtotal</h3>
+                                <div>Cost var</div>
+                            </div>
+                            <div className="cart-costs">
+                                <h3>Shipping</h3>
+                                <div>FREE</div>
+                            </div>
+                            <input className="cart-button" type="button" value="CHECKOUT"/>
+                        </div>
+                        <div className="cart-footer">
+                            <p>Looking for more shoes?</p>&nbsp;
+                            <p>Click <Link className="shopping-link" to={'colelctions/mens'}>here</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>
