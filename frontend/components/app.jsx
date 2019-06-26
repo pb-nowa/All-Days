@@ -6,7 +6,6 @@ import Home from '../components/home/home';
 import Header from '../components/header/header';
 import NoMatchingRoute from './NoMatchingRoute';
 import ShoeContainer from './shoes/shoe_container';
-import Cart from './cart/cart';
 
 const App = () => (
 
@@ -19,7 +18,6 @@ const App = () => (
             <Route exact path="/" component={Home}/>
             <Route component={NoMatchingRoute}/>
         </Switch>
-        <Cart />
     </div>
 );
 

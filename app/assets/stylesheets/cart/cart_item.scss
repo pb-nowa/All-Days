@@ -3,6 +3,7 @@
 .cart-item-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -11,6 +12,14 @@
     width: 114px;
     background-color: $bg-grey;
     margin-right: 20px;
+}
+
+.cart-item-info {
+    width: 307px;
+    height: 114px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }
 
 .cart-item-info h2{
@@ -24,7 +33,7 @@
 }
 
 .quantity-container {
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
 }
 
 .quantity-buttons {
@@ -50,10 +59,20 @@
     transition: 0.2s;
 }
 
+.cart-item-back-container {
+    height: 114px;
+}
+
 .cart-item-back {
     display: flex;
     height: 100%;
     flex-direction: column;
-    align-items: space-between;
+    align-items: flex-end;
     justify-content: space-between;
+}
+
+.exit {
+    &:hover {
+        cursor: pointer;
+    }
 }

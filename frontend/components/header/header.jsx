@@ -3,6 +3,8 @@ import { Link, Route } from 'react-router-dom';
 import ShoesDropdown from './header_shoes_dropdown';
 import { withRouter } from 'react-router-dom';
 import DropDownButton from './dropdown_button';
+import Cart from '../cart/cart';
+
 
 class Header extends React.Component {
     constructor(props){
@@ -15,6 +17,7 @@ class Header extends React.Component {
             headerIsActive: false,
             isAnimating: false,
             bounce: false,
+            openCart: false,
         };
         this.handleScroll = this.handleScroll.bind(this);
         this.handleDropDown = this.handleDropDown.bind(this);
@@ -117,6 +120,7 @@ class Header extends React.Component {
             <ShoesDropdown gender={this.state.dropDownGender} genderQuery={ this.state.dropDownGender === "Men" ? "mens" : "womens"} handleDropDown={this.handleDropDown}/>
         </div>
         <div className={dropDown ?  "overlay-visible" : "overly-invisible" }></div>
+        <Cart open={this.state.openCart}/>
         </>
         )
     }

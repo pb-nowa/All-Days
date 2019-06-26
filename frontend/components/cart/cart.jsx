@@ -5,6 +5,9 @@ import CartItem from './cart_item';
 class Cart extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            open: false,
+        };
 
     }
 
@@ -41,7 +44,7 @@ class Cart extends React.Component {
                         </div>
                         <div className="cart-footer">
                             <p>Looking for more shoes?</p>&nbsp;
-                            <p>Click <Link className="shopping-link" to={'colelctions/mens'}>here</Link></p>
+                            <p>Click <Link className="shopping-link" to={'/collections/mens'}>here</Link></p>
                         </div>
                     </div>
                 </div>
