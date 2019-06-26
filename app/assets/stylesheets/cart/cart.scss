@@ -1,0 +1,39 @@
+.cart-page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.cart-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+
+.cart-sidebar {
+    background-color: white;
+    width: 450px;
+    height: 100%;
+    align-self: flex-end;
+    z-index: 15;
+    padding: 20px;
+}
+
+.cart-header {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
