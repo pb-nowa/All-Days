@@ -53,8 +53,10 @@
 .cart-header {
     display: flex;
     height: 60px;
+    padding-bottom: 10px;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid $mid-grey;
 }
 
 .cart-close-button {
@@ -74,9 +76,8 @@
 }
 
 .cart-items {
-    border-top: 1px solid $mid-grey;
-    margin: 20px 0 20px 0;
-    height: calc(100% - 60px);
+    margin: 10px 0 10px 0;
+    height: calc(100% - 52px);
     overflow: scroll;
 }
 
