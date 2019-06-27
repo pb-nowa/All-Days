@@ -118,6 +118,9 @@
     border: 2px solid black;
     border-radius: 3px;
     align-self: center;
+    &:focus {
+        outline: none;
+    }
 }
 
 .cart-button:hover { 

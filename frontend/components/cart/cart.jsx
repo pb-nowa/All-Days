@@ -10,8 +10,12 @@ class Cart extends React.Component {
             subtotal: 0,
             quantity: [],
             numItems: 0,
+            notificationAnimating: false,
         };
         this.updateQuantity = this.updateQuantity.bind(this);
+        this.emptyCart = this.emptyCart.bind(this);
+        this.startNotification = this.startNotification.bind(this);
+        this.endNotification = this.endNotification.bind(this);
     }
 
     componentDidMount(){
@@ -39,6 +43,14 @@ class Cart extends React.Component {
         }
     }
 
+    startNotification() {
+        this.setState({ notificationAnimating: true });
+    }
+
+    endNotification() {
+        this.setState({ notificationAnimating: false });
+    }
+
     updateQuantity(idx, val){
         let quantity = Array.from(this.state.quantity);
         
@@ -57,9 +69,15 @@ class Cart extends React.Component {
         this.setState(() => ({ numItems }));
     }
 
+    emptyCart(){
+        const { items, removeFromCart } = this.props;
+        items.forEach(item => removeFromCart(item.id, item.size));
+        this.startNotification();
+    }
+
     render(){
         const { open, handleCartOpen, items, removeFromCart } = this.props;
-        const { subtotal, numItems } = this.state;
+        const { subtotal } = this.state;
 
         const cartItems = items.map( (item, i) => {
             return <CartItem 
@@ -73,6 +91,7 @@ class Cart extends React.Component {
 
         return(
         <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
+            <div onAnimationEnd={this.endNotification} className={this.state.notificationAnimating ? "fadeout notification" : "notification"}>Thank you for your purchase!</div>
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
                 <div className={open ? "overlay-visible open-cart" : "closed-cart"}></div>
                 <div className={ open ? "cart-sidebar in-front" : "cart-sidebar closed-cart"}>
@@ -99,7 +118,7 @@ class Cart extends React.Component {
                                 <h3>Shipping</h3>
                                 <div>FREE</div>
                             </div>
-                            <input className="cart-button" type="button" value="CHECKOUT"/>
+                            <input onClick={this.emptyCart} className="cart-button" type="button" value="CHECKOUT"/>
                         </div>
                         <div className="cart-footer">
                             <p>Looking for more shoes?</p>&nbsp;
