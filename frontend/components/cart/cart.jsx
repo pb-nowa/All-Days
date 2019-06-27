@@ -9,6 +9,7 @@ class Cart extends React.Component {
         this.state = {
             subtotal: 0,
             quantity: [],
+            numItems: 0,
         };
         this.updateQuantity = this.updateQuantity.bind(this);
     }
@@ -32,7 +33,7 @@ class Cart extends React.Component {
             });
             this.setState({ subtotal });
 
-            const quantity = Array.from(this.state.quantity)
+            const quantity = Array.from(this.state.quantity);
             quantity.push(1);
             this.setState({ quantity });
         }
@@ -47,15 +48,18 @@ class Cart extends React.Component {
         const { items } = this.props;
 
         let subtotal = 0;
+        let numItems = 0;
         items.forEach( (item, i) => {
             subtotal = item.price * quantity[i] + subtotal;
+            numItems += quantity[i];
         });
         this.setState(() => ({ subtotal }));
+        this.setState(() => ({ numItems }));
     }
 
     render(){
         const { open, handleCartOpen, items, removeFromCart } = this.props;
-        const { subtotal } = this.state;
+        const { subtotal, numItems } = this.state;
 
         const cartItems = items.map( (item, i) => {
             return <CartItem 

@@ -7,6 +7,7 @@ class Item extends React.Component {
             dropDown: false,
         };
         this.handleSizeDropdown = this.handleSizeDropdown.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleSizeDropdown(){
@@ -15,6 +16,11 @@ class Item extends React.Component {
                 dropDown: !state.dropDown,
             });
         });
+    }
+
+    handleClick(id, size){
+        this.props.addToCart(id, size);
+        this.props.startNotification();
     }
 
     render(){
@@ -55,12 +61,12 @@ class Item extends React.Component {
                 </div>
                 <div className={"size-selections " + (this.state.dropDown ? "unhidden-size-selection" : "hidden-size-selection")}>
                     <ol className="size-selections-container">
-                        <li onClick={() => addToCart(item, 7)} className="size"><h4>7</h4></li>
-                        <li onClick={() => addToCart(item, 8)} className="size"><h4>8</h4></li>
-                        <li onClick={() => addToCart(item, 19)} className="size"><h4>9</h4></li>
-                        <li onClick={() => addToCart(item, 10)} className="size"><h4>10</h4></li>
-                        <li onClick={() => addToCart(item, 11)} className="size"><h4>11</h4></li>
-                        <li onClick={() => addToCart(item, 12)} className="size"><h4>12</h4></li>
+                        <li onClick={() => this.handleClick(item, 7)} className="size"><h4>7</h4></li>
+                        <li onClick={() => this.handleClick(item, 8)} className="size"><h4>8</h4></li>
+                        <li onClick={() => this.handleClick(item, 19)} className="size"><h4>9</h4></li>
+                        <li onClick={() => this.handleClick(item, 10)} className="size"><h4>10</h4></li>
+                        <li onClick={() => this.handleClick(item, 11)} className="size"><h4>11</h4></li>
+                        <li onClick={() => this.handleClick(item, 12)} className="size"><h4>12</h4></li>
                     </ol>
                 </div>
 

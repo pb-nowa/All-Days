@@ -21,10 +21,10 @@ const Account = ({ login, signup, logout, currentUser, errors }) => {
           <input type="submit" className="sign-out" value="LOGOUT" onClick={logout}/>
         </div>
         <div className="my-account-page-body">
-          <div className="order">You haven't placed any orders yet.</div>
+          <div className="order">You don't have any items in your cart.</div>
           <div className="user-info">
             <div>WELCOME</div>
-            <div>{currentUser}</div>
+            <div></div>
           </div>
         </div>
       </div>

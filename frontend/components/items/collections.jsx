@@ -20,6 +20,7 @@ class Collections extends React.Component {
             },
             shouldAnimate: false,
             itemsAnimate: true,
+            notificationAnimating: false,
         };
 
         this.filterItems = this.filterItems.bind(this);
@@ -30,6 +31,8 @@ class Collections extends React.Component {
         this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
         this.clearGlobalAnimations = this.clearGlobalAnimations.bind(this);
         this.imageLoaded = this.imageLoaded.bind(this);
+        this.startNotification = this.startNotification.bind(this);
+        this.endNotification = this.endNotification.bind(this);
     }
     
     componentDidMount() {
@@ -131,6 +134,14 @@ class Collections extends React.Component {
         this.setState({ loading: false });
     }
 
+    startNotification(){
+        this.setState({ notificationAnimating: true});
+    }
+
+    endNotification(){
+        this.setState({ notificationAnimating: false});
+    }
+
     render() {
         const filterAttrs = this.state.filterAttributes;
         const { addToCart } = this.props;
@@ -142,6 +153,7 @@ class Collections extends React.Component {
             const items = this.state.items.map(item => {
                 return (
                     <Item 
+                        startNotification={this.startNotification}
                         addToCart={addToCart}
                         clearGlobalAnimations={this.clearGlobalAnimations}
                         itemsAnimate={this.state.itemsAnimate}
@@ -164,6 +176,7 @@ class Collections extends React.Component {
             <>
             <Loading isLoading={this.state.loading}/>
             <div>
+                <div onAnimationEnd={this.endNotification} className={this.state.notificationAnimating ? "fadeout notification" : "notification"}>Your item has been added to the cart!</div>
                 <ShoesHeader imageLoaded={this.imageLoaded} gender={ this.props.match.params.id }/>
                 <div className="items-body">
                     <div className="filter-header">

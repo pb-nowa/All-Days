@@ -1,4 +1,5 @@
 @import 'utils';
+@import 'animations';
 
 .items-body > ul {
     display: flex;
@@ -129,4 +130,33 @@
 .size-selections.unhidden-size-selection {
     height: 90px;
     transition: .2s;
+}
+
+
+.notification {
+    position: fixed;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px; 
+    right: 20px;
+    padding: 15px;
+    border-radius: 3px;
+    height: 80px;
+    width: 300px;
+    font-size: 14px;
+    box-shadow: 2px $bg-grey;
+    color: transparent;
+    background: transparent;
+
+}
+
+.fadeout {
+    animation: fadeout 3s;
+    &:hover {
+        z-index: 1;
+        transition: .2s;
+        user-select: none;
+    }
 }
