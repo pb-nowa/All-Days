@@ -54,7 +54,7 @@ class Cart extends React.Component {
     }
 
     render(){
-        const { open, handleCartOpen, items } = this.props;
+        const { open, handleCartOpen, items, removeFromCart } = this.props;
         const { subtotal } = this.state;
 
         const cartItems = items.map( (item, i) => {
@@ -63,8 +63,10 @@ class Cart extends React.Component {
                 key={`${item.id}-${item.size}`} 
                 index={i} 
                 updateQuantity={this.updateQuantity}
+                removeFromCart={removeFromCart}
                 />
         });
+
         return(
         <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>

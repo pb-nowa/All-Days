@@ -29,7 +29,8 @@ class CartItem extends React.Component {
 
     render(){
         const { quantity } = this.state;
-        const { name, color, photoUrl, price, size } = this.props.item
+        const { name, color, photoUrl, price, size, id } = this.props.item
+        const { removeFromCart } = this.props;
         return(
             <div className="cart-item-container">
                 <div className="cart-item-image-container">
@@ -51,7 +52,7 @@ class CartItem extends React.Component {
                 </div>
                 <div className="cart-item-back-container">
                     <div className="cart-item-back">
-                        <div className="exit">&#10005;</div>
+                        <div onClick={() => removeFromCart(id, size)} className="exit">&#10005;</div>
                         <div>${price}</div>
                     </div>
                 </div>
