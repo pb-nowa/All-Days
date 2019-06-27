@@ -69,10 +69,14 @@
     font-size: 22px;
 }
 
+.cart-upper-conatiner {
+    height: calc(100% - 275px - 40px);
+}
+
 .cart-items {
     border-top: 1px solid $mid-grey;
     padding: 20px 0 20px 0;
-    height: 400px;
+    height: calc(100% - 60px);
     overflow: scroll;
 }
 

@@ -97,7 +97,7 @@ class Cart extends React.Component {
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
                 <div className={open ? "overlay-visible open-cart" : "closed-cart"}></div>
                 <div className={ open ? "cart-sidebar in-front" : "cart-sidebar closed-cart"}>
-                    <div>
+                    <div className="cart-upper-conatiner">
                         <div className="cart-header">
                             <h2>CART</h2>
                             <div onClick={handleCartOpen} className="cart-close-button">close</div>
