@@ -15,6 +15,7 @@ class CartItem extends React.Component {
         this.setState({
             quantity
         });
+        this.props.updateQuantity(this.props.index, quantity);
     }
 
     removeQuantity(){
@@ -23,6 +24,7 @@ class CartItem extends React.Component {
         this.setState({
             quantity
         });
+        this.props.updateQuantity(this.props.index, quantity);
     }
 
     render(){

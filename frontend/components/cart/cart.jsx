@@ -5,14 +5,66 @@ import CartItem from './cart_item';
 class Cart extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            subtotal: 0,
+            quantity: [],
+        };
+        this.updateQuantity = this.updateQuantity.bind(this);
+    }
+
+    componentDidMount(){
+        const { items } = this.props;
+        if (items.length) {
+            const subtotal = items.reduce((total, item) => item.price + total);
+            this.setState({
+                subtotal
+            });
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        const { items } = this.props;
+        if (items.length !== prevProps.items.length) {
+            let subtotal = 0;
+            items.forEach( item => {
+                subtotal += item.price;
+            });
+            this.setState({ subtotal });
+
+            const quantity = Array.from(this.state.quantity)
+            quantity.push(1);
+            this.setState({ quantity });
+        }
+    }
+
+    updateQuantity(idx, val){
+        let quantity = Array.from(this.state.quantity);
+        
+        quantity[idx] = val;
+        this.setState(() => ({ quantity }));
+        
+        const { items } = this.props;
+
+        let subtotal = 0;
+        items.forEach( (item, i) => {
+            subtotal = item.price * quantity[i] + subtotal;
+        });
+        this.setState(() => ({ subtotal }));
     }
 
     render(){
         const { open, handleCartOpen, items } = this.props;
+        const { subtotal } = this.state;
 
-        const cartItems = items.map( item => {
-            return <CartItem item={item} key={`${item.id}-${item.size}`}/>
-        })
+        const cartItems = items.map( (item, i) => {
+            return <CartItem 
+                item={item} 
+                key={`${item.id}-${item.size}`} 
+                index={i} 
+                updateQuantity={this.updateQuantity}
+                />
+        });
         return(
         <div className={ open ? "cart-page-container open-cart" : "cart-page-container closed-cart"}>
             <div className={open ? "cart-container in-front open-container" : "cart-container closed-cart"}>
@@ -35,7 +87,7 @@ class Cart extends React.Component {
                         <div className="cart-totals">
                             <div className="cart-costs">
                                 <h3>Subtotal</h3>
-                                <div>Cost var</div>
+                                <div>${subtotal}</div>
                             </div>
                             <div className="cart-costs">
                                 <h3>Shipping</h3>
