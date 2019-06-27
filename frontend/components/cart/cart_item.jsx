@@ -51,7 +51,7 @@ class CartItem extends React.Component {
                 </div>
                 <div className="cart-item-back-container">
                     <div className="cart-item-back">
-                        <div className="exit">X</div>
+                        <div className="exit">&#10005;</div>
                         <div>${price}</div>
                     </div>
                 </div>
