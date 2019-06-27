@@ -72,7 +72,9 @@ class Cart extends React.Component {
     emptyCart(){
         const { items, removeFromCart } = this.props;
         items.forEach(item => removeFromCart(item.id, item.size));
-        this.startNotification();
+        if (items.length){
+            this.startNotification();
+        }
     }
 
     render(){
@@ -106,8 +108,8 @@ class Cart extends React.Component {
                     </div>
                     <div>
                         <div className="divider">Looking for something else?
-                            &nbsp;
-                            <Link className="shopping-link" to={'/collections/mens'}>Keep Shopping</Link>
+                                &nbsp;
+                            <Link onClick={handleCartOpen} className="shopping-link" to={'/collections/mens'}>Keep Shopping</Link>
                         </div>
                         <div className="cart-totals">
                             <div className="cart-costs">
@@ -122,7 +124,7 @@ class Cart extends React.Component {
                         </div>
                         <div className="cart-footer">
                             <p>Looking for more shoes?</p>&nbsp;
-                            <p>Click <Link className="shopping-link" to={'/collections/mens'}>here</Link></p>
+                            <p>Click  <Link className="shopping-link" onClick={handleCartOpen} to={'/collections/mens'}>here</Link></p>
                         </div>
                     </div>
                 </div>
